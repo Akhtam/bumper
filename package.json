@@ -1,32 +1,37 @@
 {
-  "name": "bumper",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Akhtam/bumper.git"
-  },
-  "author": "Akhtam, Margaret, Jan",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Akhtam/bumper/issues"
-  },
-  "homepage": "https://github.com/Akhtam/bumper#readme",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.8.9",
-    "passport": "^0.4.1",
-    "passport-jwt": "^4.0.0",
-    "validator": "^12.1.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
-  }
+	"name": "bumper",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node app.js",
+		"server:debug": "nodemon --inspect app.js",
+		"server": "nodemon app.js",
+		"frontend-install": "npm install --prefix frontend",
+		"frontend": "npm start --prefix frontend",
+		"dev": "concurrently \"npm run server\" \"npm run frontend\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Akhtam/bumper.git"
+	},
+	"author": "Akhtam, Margaret, Jan",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Akhtam/bumper/issues"
+	},
+	"homepage": "https://github.com/Akhtam/bumper#readme",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.19.0",
+		"express": "^4.17.1",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^5.8.9",
+		"passport": "^0.4.1",
+		"passport-jwt": "^4.0.0",
+		"validator": "^12.1.0"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.2"
+	}
 }
