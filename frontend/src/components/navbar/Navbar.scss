@@ -1,0 +1,26 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0% 2% 0% 2%;
+    min-height: 70px;
+    // background-color: blue;
+    box-sizing: border-box;
+    // box-shadow: 5px 10px rgba(0,0,0,1);
+
+    h1 { 
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 30px;
+    }
+}
+
+.login-button{
+    border: 1px solid black;
+    border-radius: 4px;
+    height: 40px;
+    width: 150px;
+    font-family: ArquitectaHeavy;
+    font-size: 20px;
+}

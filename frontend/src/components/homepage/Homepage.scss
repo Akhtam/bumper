@@ -1,0 +1,64 @@
+
+.homepage-top-presentation{
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 700px;
+
+    background: url(../../assets/images/header-wallpaper.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.homepage-top-presentation {
+    h2 {
+        font-family: ArquitectaHeavy;
+        font-size: 60px;
+        line-height: 44px;
+        letter-spacing: 3.4;
+        text-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);
+        color: white;
+        text-align: center;
+        margin-top: 2%;
+        
+    }
+    span {
+        margin-top: 5%;
+    }
+
+    .homepage-signup-buttons{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 50%;
+        margin-top: 10%;
+
+        button {
+            cursor: pointer;
+            height: 60px;
+            min-width: 300px;
+
+            text-align: center;
+            font-family: ArquitectaHeavy;
+            font-size: 18px;
+            margin-top: 20px;
+            
+            font-weight: bolder;
+            border-radius: 60px 60px 60px 60px;
+            text-transform: uppercase;
+            padding: 17px 48px;
+            
+            background: linear-gradient(to right, #373b44, #4286f4);
+            box-shadow: 0 5px 10px  white;
+            
+        }
+        button:hover{
+            border: 3px solid white;
+        }
+    }   
+}
+
+
