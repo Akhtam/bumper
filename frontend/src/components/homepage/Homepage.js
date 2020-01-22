@@ -1,14 +1,10 @@
 import React from "react";
-import Navbar from "../navbar/Navbar"
 import "./Homepage.scss"
 
 class Homepage extends React.Component {
   render() {
     return (
       <div className="homepage-parent">
-        <header>
-          <Navbar></Navbar>
-        </header>
         <div className="homepage-top-presentation">
           <span>
             <h2> If car owner or service prodiver </h2>

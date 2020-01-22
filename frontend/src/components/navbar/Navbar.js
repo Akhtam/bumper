@@ -1,43 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { logout } from '../../actions/sessionActions';
+import { Link } from 'react-router-dom';
+import './Navbar.scss';
+
 // import navbarContainer from "./navbarContainer/navbarContainer";
 
-import "./Navbar.scss";
-
 class Navbar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.setLinks = this.setLinks.bind(this);
-  }
+	logoutUser = e => {
+		e.preventDefault();
+		this.props.logout();
+	};
 
-
-  // check what ro show in navbar pending if user if logged in or not
-
-  setLinks(){
-    if (!this.setLinks){
-        return (
-            <button> Logout </button>
-        )
-    } else {
-        return (
-          <div>
-            {/* <Link to={}> Login </Link>
-                <Link> Signup </Link> */}
-            <button className="login-button">Login</button>
-          </div>
-        );
-    }  
-  }
-
-
-  render() {
-    return (
-      <div className="navbar">
-        <h1>Bumper</h1>
-        {this.setLinks()}
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div className='navbar'>
+				<h1>Bumper</h1>
+				{/* {this.setLinks()} */}
+				{this.props.loggedIn ? (
+					<button onClick={this.logoutUser}>Logout</button>
+				) : (
+					<div className='login-button'>
+						<Link to={'/login'}>Login </Link>
+					</div>
+				)}
+			</div>
+		);
+	}
 }
+const mapStateToProps = state => ({
+	loggedIn: state.session.isAuthenticated
+});
 
-export default Navbar;
+export default connect(mapStateToProps, { logout })(Navbar);
