@@ -10,6 +10,28 @@ module.exports = function validateRegisterInput(data) {
   data.password = validText(data.password) ? data.password : "";
   data.password2 = validText(data.password2) ? data.password2 : "";
 
+  if (data.role === "Provider") {
+    data.title = validText(data.title) ? data.title : "";
+    data.location = validText(data.location) ? data.location : "";
+    data.days = validText(data.days) ? data.days : "";
+
+    if (Validator.isEmpty(data.title)) {
+      errors.title = "Please enter the name of your business";
+    }
+
+    if (Validator.isEmpty(data.location)) {
+      errors.location = "Please enter the location of your business";
+    }
+
+    if (Validator.isEmpty(data.days)) {
+      errors.days = "You must select at least one day of operation";
+    } //on frontend have checkboxes for days of the week and convert it to a string with format "Monday-Friday"
+
+    if (Validator.isEmpty(data.hours)) {
+      errors.location = "Please enter the hours of service for your business";
+    } //on frontend use start and end-time selector from Akhtam's FSP
+  }
+
   if (Validator.isEmpty(data.role)) {
     errors.role = "You must select a role before continuing";
   }

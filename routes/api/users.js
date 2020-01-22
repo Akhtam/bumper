@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const User = require("../../models/User");
+const Business = require("../../models/Business");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
 const passport = require("passport");
@@ -34,17 +35,18 @@ router.post("/register", (req, res) => {
       errors.email = "A user has already registered with this email address";
       return res.status(400).json(errors);
     } else {
-      const newUser = new User({
-        name: req.body.name,
-        email: req.body.email,
-        role: req.body.role,
-        password: req.body.password
-      });
-
+        newUser = new User({
+            name: req.body.name,
+            email: req.body.email,
+            role: req.body.role,
+            password: req.body.password
+        });
+      
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
           if (err) throw err;
           newUser.password = hash;
+<<<<<<< HEAD
           newUser
             .save()
             .then(user => {
@@ -62,6 +64,63 @@ router.post("/register", (req, res) => {
               );
             })
             .catch(err => console.log(err));
+=======
+
+          if (newUser.role === 'Owner') {
+              newUser
+                .save()
+                .then(user => {
+                  const payload = { id: user.id, email: user.email, role: user.role };
+
+                  jwt.sign(
+                    payload,
+                    keys.secretOrKey,
+                    { expiresIn: 3600 },
+                    (err, token) => {
+                      res.json({
+                        success: true,
+                        token: "Bearer " + token
+                      });
+                    }
+                  );
+                })
+                .catch(err => console.log(err));
+          } else {
+              newUser
+                .save()
+                .then(user => {
+                     const business = new Business({
+                      title: req.body.title,
+                      location: req.body.location,
+                      hours: req.body.hours,
+                      providerId: user.id
+                    })  
+                    business.save()
+
+                  const payload = { id: user.id, 
+                    email: user.email, 
+                    title: business.title, 
+                    location: business.location, 
+                    hours: business.hours,
+                    providerId: business.providerId
+                   };
+    
+                  jwt.sign(
+                    payload,
+                    keys.secretOrKey,
+                    { expiresIn: 3600 },
+                    (err, token) => {
+                      res.json({
+                        success: true,
+                        token: "Bearer " + token
+                      });
+                    }
+                  );
+                    
+                })
+                .catch(err => console.log(err));
+          }
+>>>>>>> 693d6e95b4dfd16596834a56b5c0b17fdf984443
         });
       });
     }
