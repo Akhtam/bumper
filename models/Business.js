@@ -10,17 +10,21 @@ const businessSchema = new Schema({
     type: String,
     required: true
   },
-  hours: {
+  days: {
     type: String,
     required: true
+  },
+  hours: {
+    type: String,
+    required: true 
   },
   serviceIds: {
     type: Array,
     required: true
   },
   providerId: {
-    type: Integer,
-    required: true
+    type: Schema.Types.ObjectId,
+    ref: 'users'
   },
   date: {
     type: Date,
