@@ -78,13 +78,7 @@ router.post("/register", (req, res) => {
                     })  
                     business.save()
 
-                  const payload = { id: user.id, 
-                    email: user.email, 
-                    title: business.title, 
-                    location: business.location, 
-                    hours: business.hours,
-                    providerId: business.providerId
-                   };
+                  const payload = { id: user.id, email: user.email, role: user.role };
     
                   jwt.sign(
                     payload,
@@ -109,8 +103,6 @@ router.post("/register", (req, res) => {
 
 router.post("/login", (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
-
-  console.log(errors);
 
   if (!isValid) {
     return res.status(400).json(errors);
