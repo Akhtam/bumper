@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/sessionActions';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import './Navbar.scss';
 
-// import navbarContainer from "./navbarContainer/navbarContainer";
 
 class Navbar extends React.Component {
 	logoutUser = e => {
@@ -16,7 +15,6 @@ class Navbar extends React.Component {
 		return (
 			<div className='navbar'>
 				<h1>Bumper</h1>
-				{/* {this.setLinks()} */}
 				{this.props.loggedIn ? (
 					<button onClick={this.logoutUser}>Logout</button>
 				) : (
@@ -28,8 +26,10 @@ class Navbar extends React.Component {
 		);
 	}
 }
-const mapStateToProps = state => ({
+const mspt = state => ({
 	loggedIn: state.session.isAuthenticated
 });
 
-export default connect(mapStateToProps, { logout })(Navbar);
+
+
+export default connect(mspt, { logout })(Navbar);

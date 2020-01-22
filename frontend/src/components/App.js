@@ -8,6 +8,8 @@ import Navbar from './navbar/Navbar';
 
 import {Switch, Route} from 'react-router-dom'
 import Homepage from './homepage/Homepage';
+import OwnerDashboard from './ownerDashboard/OwnerDashboard';
+import ProviderDashboard from './provider/ProviderDashboard';
 
 class App extends Component {
 	render() {
@@ -28,6 +30,16 @@ class App extends Component {
 						exact
 						path='/providersignup'
 						component={ProviderSignupForm}
+					/>
+					<ProtectedRoute
+						exact
+						path='/owner-dashboard'
+						component={OwnerDashboard}
+					/>
+					<ProtectedRoute
+						exact
+						path='/provider-dashboard'
+						component={ProviderDashboard}
 					/>
 					<Route path='/' component={Homepage} />
 				</Switch>
