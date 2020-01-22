@@ -6,7 +6,6 @@ import { signup } from '../../actions/sessionActions';
 
 const mapStateToProps = state => {
 	return {
-		signedIn: state.session.isSignedIn,
 		errors: state.errors.session
 	};
 };
@@ -50,7 +49,6 @@ class OwnerSignupForm extends Component {
 		};
 
 		this.props.signup(user);
-		this.props.history.push('/owner-dashboard')
 	}
 
 	renderErrors() {
