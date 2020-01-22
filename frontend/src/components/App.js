@@ -14,7 +14,7 @@ class App extends Component {
 		return (
 			<div>
 				<header>
-					<Navbar></Navbar>
+					<Navbar />
 				</header>
 				<Switch>
 					<AuthRoute exact path='/login' component={LoginForm} />
