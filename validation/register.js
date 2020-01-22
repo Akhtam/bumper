@@ -8,12 +8,13 @@ module.exports = function validateRegisterInput(data) {
   data.email = validText(data.email) ? data.email : "";
   data.role = validText(data.role) ? data.role : "";
   data.password = validText(data.password) ? data.password : "";
-  // data.password2 = validText(data.password2) ? data.password2 : "";
+
 
   if (data.role === "Provider") {
     data.title = validText(data.title) ? data.title : "";
     data.location = validText(data.location) ? data.location : "";
     data.days = validText(data.days) ? data.days : "";
+    data.hours = validText(data.hours) ? data.hours : "";
 
     if (Validator.isEmpty(data.title)) {
       errors.title = "Please enter the name of your business";
@@ -66,14 +67,6 @@ module.exports = function validateRegisterInput(data) {
   if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
     errors.password = "Password must be at least 6 characters";
   }
-
-  // if (Validator.isEmpty(data.password2)) {
-  //   errors.password2 = "Confirm Password field is required";
-  // }
-
-  // if (!Validator.equals(data.password, data.password2)) {
-  //   errors.password2 = "Passwords must match";
-  // }
 
   return {
     errors,
