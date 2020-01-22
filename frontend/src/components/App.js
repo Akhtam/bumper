@@ -9,6 +9,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
+
 				<Switch>
 					<AuthRoute
 						exact
@@ -19,7 +20,7 @@ class App extends Component {
 						exact
 						path='/ownersignup'
 						com
-						ponent={OwnerSignupForm}
+						component={OwnerSignupForm}
 					/>
 					<AuthRoute
 						exact
