@@ -14,6 +14,7 @@ module.exports = function validateRegisterInput(data) {
     data.title = validText(data.title) ? data.title : "";
     data.location = validText(data.location) ? data.location : "";
     data.days = validText(data.days) ? data.days : "";
+    data.hours = validText(data.hours) ? data.hours : "";
 
     if (Validator.isEmpty(data.title)) {
       errors.title = "Please enter the name of your business";
