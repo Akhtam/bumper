@@ -46,25 +46,6 @@ router.post("/register", (req, res) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
           if (err) throw err;
           newUser.password = hash;
-<<<<<<< HEAD
-          newUser
-            .save()
-            .then(user => {
-              const payload = { id: user.id, email: user.email, role: user.role };
-              jwt.sign(
-                payload,
-                keys.secretOrKey,
-                { expiresIn: 3600 },
-                (err, token) => {
-                  res.json({
-                    success: true,
-                    token: "Bearer " + token
-                  });
-                }
-              );
-            })
-            .catch(err => console.log(err));
-=======
 
           if (newUser.role === 'Owner') {
               newUser
@@ -120,7 +101,6 @@ router.post("/register", (req, res) => {
                 })
                 .catch(err => console.log(err));
           }
->>>>>>> 693d6e95b4dfd16596834a56b5c0b17fdf984443
         });
       });
     }
