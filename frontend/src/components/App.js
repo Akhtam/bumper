@@ -3,7 +3,9 @@ import {AuthRoute, ProtectedRoute} from '../util/routeUtil';
 import LoginForm from './session/LoginForm';
 import OwnerSignupForm from './session/OwnerSignupForm'
 import ProviderSignupForm from './session/ProviderSignupForm';
-import {Switch} from 'react-router-dom'
+
+import {Switch, Route} from 'react-router-dom'
+import Homepage from './homepage/Homepage';
 
 class App extends Component {
 	render() {
@@ -27,6 +29,7 @@ class App extends Component {
 						path='/providersignup'
 						component={ProviderSignupForm}
 					/>
+					<Route path='/' component={Homepage}/>
 				</Switch>
 			</div>
 		);
