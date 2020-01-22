@@ -8,6 +8,7 @@ import Navbar from './navbar/Navbar';
 
 import {Switch, Route} from 'react-router-dom'
 import Homepage from './homepage/Homepage';
+import OwnerDashboard from './ownerDashboard/OwnerDashboard';
 
 class App extends Component {
 	render() {
@@ -29,6 +30,11 @@ class App extends Component {
 						path='/providersignup'
 						component={ProviderSignupForm}
 					/>
+					<ProtectedRoute
+						exact
+						path='/owner-dashboard'
+						component={OwnerDashboard}
+					 />
 					<Route path='/' component={Homepage} />
 				</Switch>
 			</div>
