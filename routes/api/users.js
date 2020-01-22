@@ -74,8 +74,10 @@ router.post("/register", (req, res) => {
                       title: req.body.title,
                       location: req.body.location,
                       hours: req.body.hours,
+                      days: req.body.days,
                       providerId: user.id
-                    })  
+                    });
+                    console.log(business); 
                     business.save()
 
                   const payload = { id: user.id, email: user.email, role: user.role };
