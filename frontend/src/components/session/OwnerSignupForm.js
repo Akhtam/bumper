@@ -32,13 +32,6 @@ class OwnerSignupForm extends Component {
 		this.clearedErrors = false;
 	}
 
-	componentWillReceiveProps(nextProps) {
-		if (nextProps.signedIn === true) {
-			this.props.history.push('/login');
-		}
-
-		this.setState({ errors: nextProps.errors });
-	}
 
 	update(field) {
 		return e =>
@@ -56,7 +49,8 @@ class OwnerSignupForm extends Component {
 			password: this.state.password
 		};
 
-		this.props.signup(user, this.props.history);
+		this.props.signup(user);
+		this.props.history.push('/owner-dashboard')
 	}
 
 	renderErrors() {

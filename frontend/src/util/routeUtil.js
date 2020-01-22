@@ -11,9 +11,9 @@ const Auth = ({ component: Component, path, loggedIn, userRole, exact }) => {
 				!loggedIn ? (
 					<Component {...props} />
 				) : userRole === 'Provider' ? (
-					<Redirect to='/providerDashboard' />
+					<Redirect to='/provider-dashboard' />
 				) : (
-					<Redirect to='/ownerDashboard' />
+					<Redirect to='/owner-dashboard' />
 				)
 			}
 		/>
@@ -32,7 +32,7 @@ const Protected = ({ component: Component, loggedIn, path }) => {
 };
 
 const mapStateToProps = state => {
-	const role = state.session.user.role ? state.session.user.role : '';
+	const role =  state.session.user ? state.session.user.role : '';
 	return {
 		loggedIn: state.session.isAuthenticated,
 		userRole: role

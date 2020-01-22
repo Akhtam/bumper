@@ -9,6 +9,7 @@ module.exports = function validateRegisterInput(data) {
   data.role = validText(data.role) ? data.role : "";
   data.password = validText(data.password) ? data.password : "";
 
+
   if (data.role === "Provider") {
     data.title = validText(data.title) ? data.title : "";
     data.location = validText(data.location) ? data.location : "";
@@ -66,7 +67,6 @@ module.exports = function validateRegisterInput(data) {
   if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
     errors.password = "Password must be at least 6 characters";
   }
-
   return {
     errors,
     isValid: Object.keys(errors).length === 0
