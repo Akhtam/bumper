@@ -24,5 +24,6 @@ router.put('/edit/:id', (req, res) => {
 
 })
 
+// add GET business w/ .then get all appointments for that business 
 
 module.exports = router;
