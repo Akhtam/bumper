@@ -9,8 +9,6 @@ const passport = require("passport");
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
-
 router.get(
   "/current",
   passport.authenticate("jwt", { session: false }),
@@ -50,8 +48,7 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then(user => {
-              const payload = { id: user.id, email: user.email };
-
+              const payload = { id: user.id, email: user.email, role: user.role };
               jwt.sign(
                 payload,
                 keys.secretOrKey,
@@ -82,15 +79,13 @@ router.post("/login", (req, res) => {
 
   const email = req.body.email;
   const password = req.body.password;
-
   User.findOne({ email }).then(user => {
     if (!user) {
       return res.status(404).json({ email: "This user does not exist" });
     }
-
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
-        const payload = { id: user.id, name: user.name };
+        const payload = { id: user.id, name: user.name, role: user.role };
 
         jwt.sign(
           payload,

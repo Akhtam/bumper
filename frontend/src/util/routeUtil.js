@@ -10,7 +10,7 @@ const Auth = ({ component: Component, path, loggedIn, userRole, exact }) => {
 			render={props =>
 				!loggedIn ? (
 					<Component {...props} />
-				) : userRole === 'provider' ? (
+				) : userRole === 'Provider' ? (
 					<Redirect to='/providerDashboard' />
 				) : (
 					<Redirect to='/ownerDashboard' />
