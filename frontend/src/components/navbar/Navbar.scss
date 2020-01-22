@@ -4,10 +4,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 0% 2% 0% 2%;
-    min-height: 70px;
-    // background-color: blue;
+    max-height: 50px;
+    background: linear-gradient(to bottom, #f7f8f8, #acbb78);
     box-sizing: border-box;
-    // box-shadow: 5px 10px rgba(0,0,0,1);
+    box-shadow: 5px 10px rgba(0,0,0,0.6);
 
     h1 { 
         color: black;
