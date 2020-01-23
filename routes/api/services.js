@@ -26,10 +26,12 @@ router.post("/create", (req, res) => {
     }).catch(err => console.log(err));
 })
 
+//services index for owners search
 router.get("/", (req, res) => {
     Service.find()
         .then(services => res.json(services))
         .catch(err => res.status(404).json("No services found"))
 })
+
 
 module.exports = router;
