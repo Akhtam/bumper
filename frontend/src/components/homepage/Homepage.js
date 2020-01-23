@@ -5,7 +5,7 @@ import "./Homepage.scss"
 class Homepage extends React.Component {
   render() {
     return (
-      <div className="homepage-parent" class="top-panel">
+      <div className="homepage-parent" className="top-panel">
         <div className="homepage-top-presentation">
           <span>
             <h2> Car service was never that easy </h2>
