@@ -41,7 +41,7 @@ class App extends Component {
 						path='/provider-dashboard'
 						component={ProviderDashboard}
 					/>
-					<Route path='/' component={Homepage} />
+					<AuthRoute path='/' component={Homepage} />
 				</Switch>
 			</div>
 		);
