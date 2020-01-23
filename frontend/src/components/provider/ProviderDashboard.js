@@ -1,11 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Service from './service/Service';
+import Axios from 'axios';
 
 export default class ProviderDashboard extends Component {
-    render() {
-        return (
-            <div>
-               Hello from provider 
-            </div>
-        )
-    }
+	render() {
+		return (
+			<div>
+                
+				<div className='service-container'>
+					<Service />
+				</div>
+			</div>
+		);
+	}
 }
+
+
+
