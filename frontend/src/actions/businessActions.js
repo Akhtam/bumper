@@ -2,9 +2,10 @@ import * as businessApiUtil from '../util/businessUtil';
 
 export const RECEIVE_BUSINESS = 'RECEIVE_BUSINESS';
 
-const receiveBusiness = business => ({
+const receiveBusiness = ({business, services}) => ({
 	type: RECEIVE_BUSINESS,
-	business
+    business,
+    services
 });
 
 export const fetchBusiness = providerId => dispatch => {
