@@ -37,6 +37,7 @@ class LoginForm extends Component {
 		// 		</li>
 		// 	);
 		// });
+		
 		return (
 			<div className='container'>
 				<div className='login-box'>

@@ -14,7 +14,9 @@ class Navbar extends React.Component {
 	render() {
 		return (
 			<div className='navbar'>
-				<h1>Bumper</h1>
+				<Link to="/" className="bumper-logosign">
+					<h1>Bumper</h1>
+				</Link>
 				{this.props.loggedIn ? (
 					<button onClick={this.logoutUser}>Logout</button>
 				) : (

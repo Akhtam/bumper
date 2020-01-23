@@ -4,15 +4,21 @@
     align-items: center;
     justify-content: space-between;
     padding: 0% 2% 0% 2%;
-    min-height: 70px;
-    // background-color: blue;
+    max-height: 50px;
+    
+    
     box-sizing: border-box;
-    // box-shadow: 5px 10px rgba(0,0,0,1);
+    box-shadow: 5px 10px rgba(0,0,0,0.6);
 
     h1 { 
-        color: black;
+        // color: black;
+        color: rgba(0,0,0,0.6);
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size: 30px;
+        font-size: 25px;
+    }
+
+    .bumper-logosign{
+        text-decoration: none;
     }
 }
 
