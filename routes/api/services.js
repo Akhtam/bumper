@@ -33,5 +33,28 @@ router.get("/", (req, res) => {
         .catch(err => res.status(404).json("No services found"))
 })
 
+router.put('/edit/:id', (req, res) => {
+    const {errors, isValid} = validateServiceInput(req.body);
+
+    if (!isValid) {
+        return res.status(400).json(errors)
+    }
+
+    Service.findById(ObjectID(req.params.id), (err, service) => {
+        if (req.body._id) {
+            delete req.body._id;
+        }
+        for (let i in req.body) {
+            service[i] = req.body[i];
+        }
+        service.save().catch(err => console.log(err));
+        res.json(service);
+    })
+})
+
+router.delete('/delete/:id', (req, res) => {
+    Service.findOneAndDelete(req.params.id, (err, service) => {
+    })
+})
 
 module.exports = router;
