@@ -24,6 +24,13 @@ router.put('/edit/:id', (req, res) => {
 
 })
 
-// add GET business w/ .then get all appointments for that business 
+router.get("/", (req, res) => {
+  Business.find({providerId: req.params.providerId})
+    .then(business => 
+      
+      res.json({
+      business: business
+    }))
+})
 
 module.exports = router;
