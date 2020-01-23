@@ -1,29 +1,36 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const Business = require("../../models/Business");
-const ObjectID = require("mongodb").ObjectID;
-const validateBusinessEditInput = require("../../validation/businessEdit");
+const Business = require('../../models/Business');
+const ObjectID = require('mongodb').ObjectID;
+const validateBusinessEditInput = require('../../validation/businessEdit');
 
 router.put('/edit/:id', (req, res) => {
-  const {errors, isValid} = validateBusinessEditInput(req.body);
+	const { errors, isValid } = validateBusinessEditInput(req.body);
 
-  if (!isValid) {
-    return res.status(400).json(errors);
-  }
+	if (!isValid) {
+		return res.status(400).json(errors);
+	}
 
-    Business.findById(ObjectID(req.params.id), (err, business) => {
-      if (req.body._id) {
-        delete req.body._id;
-      }
-      for (let b in req.body) {
-        business[b] = req.body[b];
-      }
-      business.save().catch(err => console.log(err));
-      res.json(business);
-    });
+	Business.findById(ObjectID(req.params.id), (err, business) => {
+		if (req.body._id) {
+			delete req.body._id;
+		}
+		for (let b in req.body) {
+			business[b] = req.body[b];
+		}
+		business.save().catch(err => console.log(err));
+		res.json(business);
+	});
+});
 
-})
-
-// add GET business w/ .then get all appointments for that business 
+router.get('/:providerId', (req, res) => {
+	console.log(req.params);
+	Business.find({ providerId: req.params.providerId }).then(business =>
+		res.json({
+			business: business
+		})
+	);
+});
 
 module.exports = router;
+

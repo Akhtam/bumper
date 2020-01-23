@@ -18,10 +18,10 @@ const businessSchema = new Schema({
     type: String,
     required: true 
   },
-  // serviceIds: {
-  //   type: Array,
-  //   required: true
-  // },
+  serviceIds: [{
+    type: Schema.Types.ObjectId,
+    ref: 'services'
+  }],
   providerId: {
     type: Schema.Types.ObjectId,
     ref: 'users'
