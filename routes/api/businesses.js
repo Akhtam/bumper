@@ -24,7 +24,6 @@ router.put('/edit/:id', (req, res) => {
 });
 
 router.get('/:providerId', (req, res) => {
-	console.log(req.params);
 	Business.findOne({ providerId: req.params.providerId }).then(business =>
 		res.json({
 			business: business

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBusiness } from '../../actions/businessActions';
+import './provider.scss'
 
 import Service from './service/Service';
 import Appointments from './appointments/Appointments';
@@ -12,15 +13,17 @@ class ProviderDashboard extends Component {
     }
 	render() {
 		return (
-			<div>
+			<div className='provider-container'>
 				<div className='appointments-container'>
 					<Appointments />
 				</div>
-				<div className='notification-container'>
-					<Notifications />
-				</div>
-				<div className='service-container'>
-					<Service />
+				<div className='service-notification'>
+					<div className='notification-container'>
+						<Notifications />
+					</div>
+					<div className='service-container'>
+						<Service />
+					</div>
 				</div>
 			</div>
 		);

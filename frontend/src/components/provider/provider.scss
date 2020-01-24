@@ -1,0 +1,35 @@
+
+.appointments-container {
+    border: 1px solid black;
+    height: 84vh;
+}
+.service-container {
+    border: 1px solid #000000;
+    margin-top: 4vh;
+    height: 40vh;
+}
+
+.notification-container {
+    border: 1px solid black;
+    height: 40vh;
+}
+
+.provider-container {
+	display: flex;
+	width: 100%;
+    margin-top: 40px;
+    justify-content: space-between;
+}
+
+.appointments-container {
+    width: 50%;
+    margin-left: 50px;
+}
+
+
+.service-notification {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    width: 35%;
+}
