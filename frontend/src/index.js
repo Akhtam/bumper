@@ -16,10 +16,8 @@ import { setAuthToken } from './util/sessionApiUtil';
 // We have not created this action yet, but will do so in the next step
 import { logout } from './actions/sessionActions';
 
-import {fetchbusiness} from './util/businessUtil';
 
 document.addEventListener('DOMContentLoaded', () => {
-	window.fetchbusiness = fetchbusiness
 	let store;
 
 	// If a returning user has a session token stored in localStorage
