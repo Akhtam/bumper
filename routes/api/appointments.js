@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 // const ObjectID = require("mongodb").ObjectID;
 const validateAppointmentInput = require("../../validation/createAppointment");
-const AppointmentMethods = require("../../models/Appointment");
-const Appointment = AppointmentMethods.Appointment;
+// const AppointmentMethods = require("../../models/Appointment");
+// const Appointment = AppointmentMethods.Appointment;
+const User = require("../../models/User");
 
 router.post("/create", (req, res) => {
   const { errors, isValid } = validateAppointmentInput(req.body);
@@ -12,15 +13,22 @@ router.post("/create", (req, res) => {
     return res.status(400).json(errors);
   }
 
-  new Appointment({
+  const appointment = {
     serviceId: req.body.serviceId,
     // vehicleId: req.body.vehicleId,
     date: req.body.date,
     startTime: req.body.startTime,
     endTime: req.body.endTime
-  })
-    .save().then(appt => res.json(appt))
-    .catch(err => console.log(err));
+  };
+
+  User.findById(req.body.userId).then(user => {
+      user.appointments.push(appointment);
+      user
+        .save()
+        .then(appointment => res.json(appointment))
+        .catch(err => console.log(err));
+    })
+
 });
 
 module.exports = router;
