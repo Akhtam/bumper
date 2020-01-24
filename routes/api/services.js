@@ -56,16 +56,12 @@ router.put("/edit/:id", (req, res) => {
 });
 
 router.delete("/delete/:id", (req, res) => {
-  //   Service.findById(req.params.id).then(service => {
-  //     Business.updateOne({}, { $pull: { serviceIds: service.id } }).then(business => delete service);
-  //   });
     Service.findOneAndDelete(req.params.id).then(service => {
-    //     console.log(service)
         Business.findById(ObjectID(service.businessId)).then(business => {
-            business.serviceIds.filter(id => (id !== service.id))
-            }).then(result => console.log(result))
-            // {_id: service.businessId},
-            // {$pull: {'serviceIds': service.id}}
+            business.serviceIds.remove(service.id);
+            business.save();
+            res.json(business);
+        })
     })
 });
 
