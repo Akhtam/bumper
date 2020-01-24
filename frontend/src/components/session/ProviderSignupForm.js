@@ -70,7 +70,6 @@ class ProviderSignupForm extends Component {
 	}
 
 	handleDays = e => {
-        console.log(e.target.value)
 		if(e.target.checked) {
             this.setState({
                 days: [...this.state.days, e.target.value]

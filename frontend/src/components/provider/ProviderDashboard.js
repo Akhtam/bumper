@@ -9,11 +9,18 @@ import Notifications from './notifications/Notifications';
 
 class ProviderDashboard extends Component {
     componentDidMount() {
-        this.props.fetchBusiness(this.props.providerId)
-    }
+		this.props.fetchBusiness(this.props.providerId)
+	}
+	handleEdit = e => {
+		e.preventDefault();
+		debugger
+		this.props.history.push(`provider-dashboard/${this.props.businessId}/edit`);
+	}
 	render() {
+
 		return (
 			<div className='provider-container'>
+				{/* <button onClick={this.handleEdit}>Edit Business</button> */}
 				<div className='appointments-container'>
 					<Appointments />
 				</div>
@@ -31,7 +38,8 @@ class ProviderDashboard extends Component {
 }
 
 const mstp = state => ({
-    providerId: state.session.user.id
+	providerId: state.session.user.id,
+	businessId: state.entities.business._id
 
 });
 
