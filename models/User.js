@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+// const AppointmentMethods = require("../models/Appointment");
+// const appointmentSchema = AppointmentMethods.appointmentSchema;
 
 const userSchema = new Schema({
   name: {
@@ -18,6 +20,16 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+  appointments: [
+    {
+      serviceId: { type: Schema.Types.ObjectId, ref: "services" },
+      // vehicleId: { type: Schema.Types.ObjectId, ref: "vehicles" },
+      startTime: String,
+      endTime: String,
+      confirmed: { type: Boolean, default: false },
+      done: { type: Boolean, default: false }
+    }
+  ],
   date: {
     type: Date,
     default: Date.now
