@@ -24,7 +24,7 @@ router.post("/create", (req, res) => {
         business.serviceIds.push(ObjectID(service.id));
         business.save();
       });
-      res.json({ service });
+      res.json(service);
     })
     .catch(err => console.log(err));
 });

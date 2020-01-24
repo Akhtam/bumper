@@ -28,8 +28,8 @@ router.get("/", (req, res) => {
   Business.find().then(businesses => res.json(businesses));
 });
 
-router.get("/:providerId", (req, res) => {
-  Business.findOne({ providerId: req.params.providerId }).then(business => {
+router.get("/:providerId", async (req, res) => {
+  const bussines = await Business.findOne({ providerId: req.params.providerId }).then(business => {
     let services = [];
     let ids = 0;
     while (ids < business.serviceIds.length) {
