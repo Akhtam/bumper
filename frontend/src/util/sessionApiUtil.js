@@ -12,6 +12,5 @@ export const login = userData => {
 };
 
 export const signup = userData => {
-	debugger
 	return axios.post('/api/users/register', userData);
 };

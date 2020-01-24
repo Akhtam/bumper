@@ -4,8 +4,6 @@ import LoginForm from './session/LoginForm';
 import OwnerSignupForm from './session/OwnerSignupForm'
 import ProviderSignupForm from './session/ProviderSignupForm';
 import Navbar from './navbar/Navbar';
-
-
 import {Switch, Route} from 'react-router-dom'
 import Homepage from './homepage/Homepage';
 import OwnerDashboard from './ownerDashboard/OwnerDashboard';
