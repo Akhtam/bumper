@@ -21,7 +21,7 @@ module.exports = function validateServiceInput(data) {
   }
 
   if (!Validator.isLength(data.description, { min: 0, max: 500 })) {
-    errors.password = "Service description cannot exceed 500 characters";
+    errors.description = "Service description cannot exceed 500 characters";
   }
 
   return {

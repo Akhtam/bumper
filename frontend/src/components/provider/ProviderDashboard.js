@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBusiness } from '../../actions/businessActions';
-
-import Service from './service/Service';
 import Appointments from './appointments/Appointments';
 import Notifications from './notifications/Notifications';
+import Service from "./service/Service";
+
+import Modal from "../modal/modal"
 
 class ProviderDashboard extends Component {
     componentDidMount() {
@@ -12,18 +13,19 @@ class ProviderDashboard extends Component {
     }
 	render() {
 		return (
-			<div>
-				<div className='appointments-container'>
-					<Appointments />
-				</div>
-				<div className='notification-container'>
-					<Notifications />
-				</div>
-				<div className='service-container'>
-					<Service />
-				</div>
-			</div>
-		);
+      <div>
+        <Modal />
+        <div className="appointments-container">
+          <Appointments />
+        </div>
+        <div className="notification-container">
+          <Notifications />
+        </div>
+        <div className="service-container">
+          <Service />
+        </div>
+      </div>
+    );
 	}
 }
 
