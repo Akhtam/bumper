@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const AppointmentMethods = require("../models/Appointment");
+const appointmentSchema = AppointmentMethods.appointmentSchema;
 
 const userSchema = new Schema({
   name: {
@@ -18,6 +20,7 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+  appointments: [appointmentSchema],
   date: {
     type: Date,
     default: Date.now
