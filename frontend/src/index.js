@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			// Logout the user and redirect to the login page
 			store.dispatch(logout());
 			window.location.href = '/login';
+			
 		}
 	} else {
 		// If this is a first time user, start with an empty store
@@ -51,4 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const root = document.getElementById('root');
 
 	ReactDOM.render(<Root store={store} />, root);
+
+	window.getState=store.getState;
+	window.setState = store.setState;
 });
