@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import { createNewService } from "../../../actions/serviceActions";
 import ServiceForm from "./ServiceForm";
@@ -9,16 +8,17 @@ const mapStateToProps = (state) => ({
     service: {
         type: "",
         price: "",
-        description: ""
+        description: "",
     },
-    fromType: "create"
-    // errors: state.errors.services
+    fromType: "create",
+    errors: state.errors.service
 })
 
 
 const mapDispatchToProps = dispatch => ({
   processForm: formData => dispatch(createNewService(formData)),
-  openModal: modal => dispatch(openModal(modal))
+  openModal: modal => dispatch(openModal(modal)),
+  closeModal: () => dispatch(closeModal())
 });
 
 

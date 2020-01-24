@@ -18,6 +18,6 @@ export const receiveService = service => ({
 
 export const createNewService = (data) => dispatch =>
     createService(data)
-        .then(service => dispatch(receiveService(service)))
+        .then(service => dispatch(receiveService(service.data)))
         .catch(err => console.log(err))
 
