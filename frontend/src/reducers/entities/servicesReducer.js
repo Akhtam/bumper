@@ -1,14 +1,13 @@
-import {
-  // RECEIVE_BUSINESS_SERVICES,
-  RECEIVE_SERVICE
-} from "../../actions/serviceActions";
+import { RECEIVE_SERVICE } from "../../actions/serviceActions";
+import { RECEIVE_BUSINESS } from "../../actions/businessActions";
 
 const servicesReducer = (state = {}, action) => {
   Object.freeze(state);
-  // let newState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_SERVICE:
       return action.service;
+    case RECEIVE_BUSINESS:
+      return Object.assign({}, state, action.services);
     default:
       return state;
   }

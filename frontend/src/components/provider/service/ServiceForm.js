@@ -3,9 +3,13 @@ import React, { Component } from "react";
 export default class ServiceForm extends Component {
   constructor(props) {
     super(props);
-    this.state = this.props.service;
+    // this.state = this.props.service
+    this.state = {
+      type: "",
+      price: "",
+      description: "",
+    }
     this.handleSubmit = this.handleSubmit.bind(this);
-    
   }
 
   handleUpdate(field) {

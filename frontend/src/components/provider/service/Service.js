@@ -1,20 +1,19 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { openModal } from "../../../actions/modalActions";
 
-class Service extends React.Component{
-    
-    render(){
-        return (
-            <div>
-                <button onClick={() =>this.props.openModal("create")}>Create</button>
-            </div>
-        );
-    }
+class Service extends Component {
+  render() {
+    return (
+      <div>
+        <button onClick={() => this.props.openModal("create")}>Create</button>
+      </div>
+    );
+  }
 }
 
 const mapDispatchToProps = dispatch => ({
-    openModal: modal => dispatch(openModal(modal))
-})
+  openModal: modal => dispatch(openModal(modal))
+});
 
 export default connect(null, mapDispatchToProps)(Service);

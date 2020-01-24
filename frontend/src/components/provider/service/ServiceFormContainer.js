@@ -5,13 +5,14 @@ import {openModal, closeModal} from '../../../actions/modalActions';
 
 
 const mapStateToProps = (state) => ({
-    service: {
-        type: "",
-        price: "",
-        description: "",
-    },
+    // service: {
+    //     type: "",
+    //     price: "",
+    //     description: "",
+            // businessId: state.entities.business.businessId
+    // },
     fromType: "create",
-    errors: state.errors.service
+    // errors: state.errors.service
 })
 
 
