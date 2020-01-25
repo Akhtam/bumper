@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 
+
+
+
+
 export default class ServiceForm extends Component {
   constructor(props) {
     super(props);
     this.state = this.props.service
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.types = this.props.types; 
   }
+
+  
 
   handleUpdate(field) {
     return e =>
@@ -23,22 +30,26 @@ export default class ServiceForm extends Component {
   //   return (
   //     <ul>
   //       {Object.keys(this.props.errors).map((error, i) => (
-  //         <li key={`error-${i}`}>{this.state.errors[error]}</li>
+  //         <li key={`error-${i}`}>{error}</li>
   //       ))}
   //     </ul>
   //   );
   // }
 
   render() {
+    // debugger;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input
-            type="field"
-            value={this.state.type}
-            onChange={this.handleUpdate("type")}
-            placeholder="type"
-          />
+          <select value={this.state.type} onChange={this.handleUpdate("type")}>
+            <option disabled> SELECT</option>
+            {this.types.map((type, i) => (
+              <option key={i} value={type} >
+                {type}
+              </option>
+            ))}
+          </select>
+
           <input
             type="field"
             value={this.state.price}

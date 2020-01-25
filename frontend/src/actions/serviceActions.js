@@ -20,7 +20,6 @@ export const createNewService = data => dispatch => {
 
   return createService(data)
     .then(service => {
-      // debugger
       return dispatch(receiveService(service.data))
     })
     // .catch(err => dispatch(receiveServiceErrors(err)));
