@@ -10,7 +10,7 @@ import './provider.scss'
 
 class ProviderDashboard extends Component {
 	componentDidMount() {
-		this.props.fetchBusiness(this.props.providerId);
+		this.props.fetchBusiness(this.props.providerId)
 	}
 	handleEdit = e => {
 		e.preventDefault();
@@ -19,6 +19,7 @@ class ProviderDashboard extends Component {
 		);
 	};
 	render() {
+
 		return (
 			<div className='provider-container'>
 				<Modal />
