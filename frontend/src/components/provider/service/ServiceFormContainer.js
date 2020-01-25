@@ -10,8 +10,8 @@ const mapStateToProps = state => ({
 		description: '',
 		businessId: state.entities.business._id
 	},
-	fromType: 'create'
-	// errors: state.errors.service
+	fromType: 'create',
+	// errors: state.errors.serviceErrors
 });
 
 const mapDispatchToProps = dispatch => ({
