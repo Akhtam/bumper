@@ -4,16 +4,21 @@ import { openModal } from "../../../actions/modalActions";
 
 class Service extends Component {
   render() {
+    console.log(this.props)
     return (
       <div>
+
         <button onClick={() => this.props.openModal("create")}>Create</button>
       </div>
     );
   }
 }
 
+const mstp = state => ({
+  services: Object.values(state.entities.services)
+})
 const mapDispatchToProps = dispatch => ({
   openModal: modal => dispatch(openModal(modal))
 });
 
-export default connect(null, mapDispatchToProps)(Service);
+export default connect(mstp, mapDispatchToProps)(Service);
