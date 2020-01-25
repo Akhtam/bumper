@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import { signup } from '../../actions/sessionActions';
+import './login.scss'
 
 
 const mapStateToProps = state => {
@@ -63,35 +64,45 @@ class OwnerSignupForm extends Component {
 
 	render() {
 		return (
-			<div className='signup-form-container'>
-				<form onSubmit={this.handleSubmit}>
-					<div className='signup-form'>
-						<br />
-						<input
-							type='text'
-							value={this.state.email}
-							onChange={this.update('email')}
-							placeholder='Email'
-						/>
-						<br />
-						<input
-							type='text'
-							value={this.state.name}
-							onChange={this.update('name')}
-							placeholder='Name'
-						/>
-						<br />
-						<input
-							type='password'
-							value={this.state.password}
-							onChange={this.update('password')}
-							placeholder='Password'
-						/>
-						<br />
-						<input type='submit' value='Submit' />
-						{this.renderErrors()}
+			<div className='container'>
+				<div className='login-box'>
+					<div className='top-box'>
+						<form onSubmit={this.handleSubmit}>
+							<div className='textbox'>
+								<input
+									type='text'
+									value={this.state.name}
+									onChange={this.update('name')}
+									placeholder='Name'
+								/>
+							</div>
+							<div className='textbox'>
+								<input
+									type='text'
+									value={this.state.email}
+									onChange={this.update('email')}
+									placeholder='Email'
+								/>
+							</div>
+							<div className='textbox'>
+								<input
+									type='password'
+									value={this.state.password}
+									onChange={this.update('password')}
+									placeholder='Password'
+								/>
+							</div>
+							<div>
+								<input
+									type='submit'
+									value='Submit'
+									className='form-button button'
+								/>
+							</div>
+							{this.renderErrors()}
+						</form>
 					</div>
-				</form>
+				</div>
 			</div>
 		);
 	}
