@@ -3,12 +3,7 @@ import React, { Component } from "react";
 export default class ServiceForm extends Component {
   constructor(props) {
     super(props);
-    // this.state = this.props.service
-    this.state = {
-      type: "",
-      price: "",
-      description: "",
-    }
+    this.state = this.props.service
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -21,12 +16,7 @@ export default class ServiceForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault(e);
-    let formData = {
-      type: this.state.type,
-      price: this.state.price,
-      description: this.state.description
-    };
-    this.props.processForm(formData).then(() => this.props.closeModal());
+    this.props.processForm(this.state).then(() => this.props.closeModal());
   }
 
   // renderErrors() {

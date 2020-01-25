@@ -78,7 +78,7 @@ router.post("/register", (req, res) => {
                       providerId: user.id
                     });
                     console.log(business); 
-                    business.save()
+                    business.save();
 
                   const payload = { id: user.id, email: user.email, role: user.role };
     
