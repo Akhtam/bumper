@@ -4,7 +4,6 @@ import { openModal } from "../../../actions/modalActions";
 
 class Service extends Component {
   render() {
-    console.log(this.props)
     return (
       <div>
 

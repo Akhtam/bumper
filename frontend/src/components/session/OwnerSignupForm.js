@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCar } from '@fortawesome/free-solid-svg-icons';
+
+
 
 import { connect } from 'react-redux';
 import { signup } from '../../actions/sessionActions';
@@ -67,7 +71,17 @@ class OwnerSignupForm extends Component {
 			<div className='container'>
 				<div className='login-box'>
 					<div className='top-box'>
+						<div className='login-icon'>
+							<FontAwesomeIcon
+								color='rgba(0, 0, 0, 0.6)'
+								size='6x'
+								icon={faCar}
+							/>
+						</div>
 						<form onSubmit={this.handleSubmit}>
+							<div className='title'>
+								<h4>Service Driven</h4>
+							</div>
 							<div className='textbox'>
 								<input
 									type='text'
@@ -95,7 +109,7 @@ class OwnerSignupForm extends Component {
 							<div>
 								<input
 									type='submit'
-									value='Submit'
+									value='Sign Up'
 									className='form-button button'
 								/>
 							</div>
