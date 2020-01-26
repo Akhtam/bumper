@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import servicesReducer from './servicesReducer';
 import businessReducer from './businessReducer';
-import apointmentsReducer from './apointmentsReducer';
+import appointmentsReducer from './appointmentsReducer';
 
 
 export default combineReducers({
     business: businessReducer,
     services: servicesReducer,
-    apointments: apointmentsReducer
+    appointments: appointmentsReducer
 });
