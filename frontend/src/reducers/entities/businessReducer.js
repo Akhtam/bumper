@@ -1,8 +1,7 @@
 import { RECEIVE_BUSINESS } from '../../actions/businessActions';
 
-const initialState = {}
 
-const businessReducer = (state=initialState, action) => {
+const businessReducer = (state={}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_BUSINESS:

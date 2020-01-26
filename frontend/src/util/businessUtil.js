@@ -6,6 +6,5 @@ export const fetchbusiness = providerId => {
 }
 
 export const updateBusiness = business => {
-    debugger
     return axios.put(`api/businesses/edit/${business.id}`, business)
 }

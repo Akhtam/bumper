@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBusiness } from '../../actions/businessActions';
 import Appointments from './appointments/Appointments';
-import Notifications from './notifications/Notifications';
+import Notifications from './appointments/Notifications';
 import Service from './service/Service';
 
 import Modal from '../modal/modal';
-import './provider.scss'
+import './provider.scss';
 
 class ProviderDashboard extends Component {
 	componentDidMount() {
 		this.props.fetchBusiness(this.props.providerId);
 	}
+
 	handleEdit = e => {
 		e.preventDefault();
 		this.props.history.push(
@@ -19,10 +20,10 @@ class ProviderDashboard extends Component {
 		);
 	};
 	render() {
+		if(!this.props.providerId) return null;
 		return (
 			<div className='provider-container'>
 				<Modal />
-				{/* <button onClick={this.handleEdit}>Edit Business</button> */}
 				<div className='appointments-container'>
 					<Appointments />
 				</div>
