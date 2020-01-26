@@ -130,7 +130,7 @@ class ProviderSignupForm extends Component {
 						placeholder='Password'
 					/>
 					<br />
-					<h3>Bussiness Info</h3>
+					<h3>Business Info</h3>
 					<input
 						type='title'
 						value={this.state.title}
@@ -163,7 +163,7 @@ class ProviderSignupForm extends Component {
                     <br />
 
 					<button onClick={this.handleSubmit}>
-						Create bussiness
+						Create business
 					</button>
 					{this.renderErrors()}
 				</div>

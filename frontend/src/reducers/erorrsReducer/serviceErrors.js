@@ -1,20 +1,18 @@
 import {
-  RECEIVE_SESSION_ERRORS,
-//   RECEIVE_CURRENT_USER
-} from "../../actions/sessionActions";
+  RECEIVE_SERVICE_ERRORS
+
+} from "../../actions/serviceActions";
 
 const _nullErrors = [];
 
-// const SessionErrors = (state = _nullErrors, action) => {
-//   Object.freeze(state);
-//   switch (action.type) {
-//     case RECEIVE_SESSION_ERRORS:
-//       return action.errors;
-//     case RECEIVE_CURRENT_USER:
-//       return _nullErrors;
-//     default:
-//       return state;
-//   }
-// };
+const ServiceErrors = (state = _nullErrors, action) => {
+  Object.freeze(state);
+  switch (action.type) {
+    case RECEIVE_SERVICE_ERRORS:
+      return action.errors;
+    default:
+      return state;
+  }
+};
 
-export default SessionErrors;
+export default ServiceErrors;
