@@ -17,13 +17,12 @@ export const receiveService = service => ({
 
 
 export const createNewService = data => dispatch => {
-debugger
+
   return createService(data)
     .then(service => {
-      debugger
       return dispatch(receiveService(service.data))
     })
-    // .catch(err => dispatch(receiveServiceErrors(err.response.data)));
+    // .catch(err => dispatch(receiveServiceErrors(err)));
 }
 
 

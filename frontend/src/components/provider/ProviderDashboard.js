@@ -10,7 +10,7 @@ import './provider.scss';
 
 class ProviderDashboard extends Component {
 	componentDidMount() {
-		this.props.fetchBusiness(this.props.providerId);
+		this.props.fetchBusiness(this.props.providerId)
 	}
 
 	handleEdit = e => {
