@@ -15,7 +15,7 @@ router.post("/create", (req, res) => {
 
   const appointment = {
     serviceId: req.body.serviceId,
-    // vehicleId: req.body.vehicleId,
+    vehicle: req.body.vehicle,
     date: req.body.date,
     startTime: req.body.startTime,
     endTime: req.body.endTime

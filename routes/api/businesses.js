@@ -1,51 +1,96 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const Business = require('../../models/Business');
-const Service = require('../../models/Service');
-const ObjectID = require('mongodb').ObjectID;
-const validateBusinessEditInput = require('../../validation/businessEdit');
+const Business = require("../../models/Business");
+const Service = require("../../models/Service");
+const ObjectID = require("mongodb").ObjectID;
+const validateBusinessEditInput = require("../../validation/businessEdit");
+const Vehicles = require("./vehicle_seeds");
 
-router.put('/edit/:id', (req, res) => {
-	const { errors, isValid } = validateBusinessEditInput(req.body);
+router.put("/edit/:id", (req, res) => {
+  const { errors, isValid } = validateBusinessEditInput(req.body);
 
-	if (!isValid) {
-		return res.status(400).json(errors);
-	}
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
 
-	Business.findById(ObjectID(req.params.id), (err, business) => {
-		if (req.body._id) {
-			delete req.body._id;
-		}
-		for (let i in req.body) {
-			business[i] = req.body[i];
-		}
-		business.save().catch(err => console.log(err));
-		res.json(business);
-	});
+  Business.findById(ObjectID(req.params.id), (err, business) => {
+    if (req.body._id) {
+      delete req.body._id;
+    }
+    for (let i in req.body) {
+      business[i] = req.body[i];
+    }
+    business.save().catch(err => console.log(err));
+    res.json(business);
+  });
 });
 
-router.get('/', (req, res) => {
-	Business.find().then(businesses => res.json(businesses));
+router.get("/", (req, res) => {
+  Business.find().then(businesses => res.json(businesses));
 });
 
-router.get('/:providerId', async (req, res) => {
-	Business.findOne({ providerId: req.params.providerId }).then(business => {
-		let services = [];
-		let ids = 0;
-		while (ids < business.serviceIds.length) {
-			const id = business.serviceIds[ids];
-			Service.findById(id).then(result => {
-				services.push(result);
-				if (services.length === business.serviceIds.length) {
-					res.json({
-						business: business,
-						services: services
-					});
-				}
-			});
-			ids++;
-		}
-	});
+router.get("/:providerId", async (req, res) => {
+  const appointments = [
+    {
+      serviceId: ObjectID("5e2cd0ca05130e9567977c34"),
+      vehicle: Vehicles.vehicle1,
+      date: "2020-02-07",
+      startTime: "1:00 PM",
+      endTime: "1:30 PM",
+      confirmed: false,
+      done: false
+    },
+    {
+      serviceId: ObjectID("5e2cd0ca05130e9567977c34"),
+      vehicle: Vehicles.vehicle2,
+      date: "2020-01-31",
+      startTime: "12:00 PM",
+      endTime: "12:30 PM",
+      confirmed: false,
+      done: false
+    },
+    {
+      serviceId: ObjectID("5e2cd0ca05130e9567977c34"),
+      vehicle: Vehicles.vehicle3,
+      date: "2020-01-31",
+      startTime: "12:30 PM",
+      endTime: "1:00 PM",
+      confirmed: false,
+      done: false
+    },
+    {
+      serviceId: ObjectID("5e2cd0ca05130e9567977c34"),
+      vehicle: Vehicles.vehicle4,
+      date: "2020-02-03",
+      startTime: "1:00 PM",
+      endTime: "1:30 PM",
+      confirmed: false,
+      done: false
+    }
+  ];
+
+  Business.findOne({ providerId: req.params.providerId }).then(business => {
+    if (business.serviceIds.length === 0) {
+      res.json({ business });
+    } else {
+      let services = [];
+      let ids = 0;
+      while (ids < business.serviceIds.length) {
+        const id = business.serviceIds[ids];
+        Service.findById(id).then(result => {
+          services.push(result);
+          if (services.length === business.serviceIds.length) {
+            res.json({
+              business: business,
+              services: services,
+              appointments: appointments
+            });
+          }
+        });
+        ids++;
+      }
+    }
+  });
 });
 
 module.exports = router;

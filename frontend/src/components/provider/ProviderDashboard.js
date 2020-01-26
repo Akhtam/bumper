@@ -19,23 +19,23 @@ class ProviderDashboard extends Component {
 		);
 	};
 	render() {
-		return (
-			<div className='provider-container'>
-				<Modal />
-				{/* <button onClick={this.handleEdit}>Edit Business</button> */}
-				<div className='appointments-container'>
-					<Appointments />
-				</div>
-				<div className='service-notification'>
-					<div className='notification-container'>
-						<Notifications />
-					</div>
-					<div className='service-container'>
-						<Service />
-					</div>
-				</div>
-			</div>
-		);
+      return (
+        <div className="provider-container">
+          <Modal />
+          {/* <button onClick={this.handleEdit}>Edit Business</button> */}
+          <div className="appointments-container">
+            <Appointments />
+          </div>
+          <div className="service-notification">
+            <div className="notification-container">
+              <Notifications />
+            </div>
+            <div className="service-container">
+              <Service />
+            </div>
+          </div>
+        </div>
+      );
 	}
 }
 

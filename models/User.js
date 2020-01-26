@@ -24,6 +24,7 @@ const userSchema = new Schema({
     {
       serviceId: { type: Schema.Types.ObjectId, ref: "services" },
       // vehicleId: { type: Schema.Types.ObjectId, ref: "vehicles" },
+      date: Date,
       startTime: String,
       endTime: String,
       confirmed: { type: Boolean, default: false },
