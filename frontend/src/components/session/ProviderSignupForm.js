@@ -52,7 +52,8 @@ class ProviderSignupForm extends Component {
 			role: this.state.role,
             password: this.state.password,
             title: this.state.title,
-            location: this.state.location,
+			location: this.state.location,
+			serviceIds: [],
             days: this.state.days.join(' '),
             hours: `${this.state.startTime}-${this.state.endTime}`
 		};

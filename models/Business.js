@@ -20,7 +20,7 @@ const businessSchema = new Schema({
   },
   serviceIds: [{
     type: Schema.Types.ObjectId,
-    ref: 'services'
+    ref: 'services',
   }],
   providerId: {
     type: Schema.Types.ObjectId,
