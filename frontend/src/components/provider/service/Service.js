@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { openModal } from "../../../actions/modalActions";
-import ServiceItem from "./ServiceItem";
+import {ServiceItem} from "./ServiceItem";
 
 class Service extends Component {
 
