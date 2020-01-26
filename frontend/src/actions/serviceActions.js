@@ -1,5 +1,4 @@
-import { createService, deleteService } from "../util/serviceUtil";
-
+import { createService, deleteServiceUtil } from "../util/serviceUtil";
 
 export const RECEIVE_SERVICE = "RECEIVE_SERVICE";
 export const RECEIVE_SERVICE_ERRORS = "RECEIVE_SERVICE_ERRORS";
@@ -15,7 +14,7 @@ export const receiveService = service => ({
   service
 });
 
-export const remove_service = serviceId => ({
+export const removeService = serviceId => ({
   type: REMOVE_SERVICE,
   serviceId
 });
@@ -27,8 +26,8 @@ export const createNewService = data => dispatch => {
   // .catch(err => dispatch(receiveServiceErrors(err)));
 };
 
-export const deleteStory = (serviceId) => dispatch => {
-  return deleteStory(serviceId).then(serviceId => {
-    return dispatch(remove_service(serviceId));
-  })
-}
+export const deleteService = serviceId => dispatch => {
+  return deleteServiceUtil(serviceId).then(() => {
+    return dispatch(removeService(serviceId));
+  });
+};
