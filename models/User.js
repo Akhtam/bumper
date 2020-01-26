@@ -23,7 +23,8 @@ const userSchema = new Schema({
   appointments: [
     {
       serviceId: { type: Schema.Types.ObjectId, ref: "services" },
-      // vehicleId: { type: Schema.Types.ObjectId, ref: "vehicles" },
+      vehicle: Object,
+      businessId: { type: Schema.Types.ObjectId, ref: "businesses" },
       date: Date,
       startTime: String,
       endTime: String,
