@@ -26,7 +26,7 @@ router.post("/create", (req, res) => {
       });
       res.json(service);
     })
-    .catch(err => res.status(404).json)
+    .catch(err => res.status(404).json);
 });
 
 //services index for owners search
@@ -56,13 +56,17 @@ router.put("/edit/:id", (req, res) => {
 });
 
 router.delete("/delete/:id", (req, res) => {
-    Service.findOneAndDelete(req.params.id).then(service => {
-        Business.findById(ObjectID(service.businessId)).then(business => {
-            business.serviceIds.remove(service.id);
-            business.save();
-            res.json(business);
-        })
+  Service.findById(req.params.id).then(service => {
+    const businessId = service.businessId;
+    const serviceId = service.id;
+    Service.findOneAndDelete(service.id).then(service => {
+      Business.findById(businessId).then(business => {
+        business.serviceIds.remove(serviceId);
+        business.save();
+        res.json(business);
+      });
     })
+  });
 });
 
 module.exports = router;
