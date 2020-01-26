@@ -157,23 +157,30 @@ class ProviderSignupForm extends Component {
             <div style={{ display: "flex" }}>{formatWeek}</div>
           </div>
           <br />
-		  <div className="form-times">
-			<input
-				type="time"
-				value={this.state.startTime}
-				onChange={this.update("startTime")}
-			/>
-			<br />
-			<input
-				type="time"
-				value={this.state.endTime}
-				onChange={this.update("endTime")}
-			/>
-		  </div>
-          
+          <div className="form-times">
+            <div className="form-time-child">
+              Open:
+              <input
+                type="time"
+                value={this.state.startTime}
+                onChange={this.update("startTime")}
+              />
+            </div>
+            <div className="form-time-child">
+              Close:
+              <input
+                type="time"
+                value={this.state.endTime}
+                onChange={this.update("endTime")}
+              />
+            </div>
+          </div>
+
           <br />
 
-          <button onClick={this.handleSubmit}>Create business</button>
+          <button className="form-button button" onClick={this.handleSubmit}>
+            Create business
+          </button>
           {this.renderErrors()}
         </div>
       </div>

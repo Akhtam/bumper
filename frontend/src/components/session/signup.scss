@@ -2,6 +2,22 @@
   display: flex;
   justify-content: center;
   font-family: "Roboto", sans-serif;
+  background-color: rgba(248, 247, 250, 0.884);
+  height: 100%;
+}
+
+input {
+  border: 1px solid #dddddd;
+  font-size: 16px;
+
+  &:hover {
+    border: 0.6px solid rgb(170, 170, 170);
+  }
+
+  &:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
+  }
 }
 
 .head {
@@ -22,15 +38,20 @@
 
 .form-times {
   display: flex;
-  display: flex;
-  flex-direction: column;
-  width: 35%;
-  input {
-    height: 35px;
-  }
-  input[type="time"] {
-    font-size: 16px;
-    font-family: "Roboto", sans-serif;
+  .form-time-child {
+    display: flex;
+    flex-direction: column;
+    margin-right: 35px;
+    input {
+      height: 35px;
+    }
+    input[type="time"] {
+      font-size: 16px;
+      font-family: "Roboto", sans-serif;
+      padding: 0px 8px;
+      margin: 4px;
+      border-radius: 5px;
+    }
   }
 }
 
