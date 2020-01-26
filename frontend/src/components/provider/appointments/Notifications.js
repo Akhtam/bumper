@@ -1,16 +1,30 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
+import NotificationsItem from './NotificationsItem';
 
- class Notifications extends Component {
+class Notifications extends Component {
 	render() {
+		const { notifications, services } = this.props;
 		return (
 			<div>
-				<h4>Notifications</h4>
+				<NotificationsItem
+					notifications={notifications}
+					services={services}
+				/>
 			</div>
 		);
 	}
 }
 
+const mstp = state => {
+	const notifications = Object.values(state.entities.appointments).filter(
+		appointment => !appointment.confirmed
+	);
+	return {
+		services: state.entities.services,
+		notifications
+	};
+};
 
-export default Notifications
- 
+export default connect(mstp)(Notifications);
