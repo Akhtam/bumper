@@ -7,10 +7,12 @@
 	background-position: center;
 	position: relative;
 	z-index: 1;
+	background-color: rgba(248, 247, 250, 0.884);
 
 	.login-box {
 		width: 500px;
 		margin-top: 3%;
+		margin: auto;
 
 		.top-box {
 			padding: 60px 80px;
@@ -21,6 +23,7 @@
 			margin-bottom: 20px;
 			margin-top: 10px;
 			color: #344b47;
+
 			font-size: 30px;
 
 			font-family: 'Roboto', sans-serif;
@@ -34,20 +37,20 @@
 
 .textbox {
 	width: 100%;
-	overflow: hidden;
-	padding: 8px 0;
-	margin: 0;
+    padding: 8px 8px;
+    margin: 4px 0px;
+	border-radius: 5px;
 
 	input {
 		height: 40px;
-		outline: none;
 		font-size: 14px;
 		font-weight: 200;
 		float: left;
-		width: 93%;
+		width: 94%;
 		min-width: 160px;
 		border: 1px solid #dddddd;
-		padding: 10px;
+		padding: 0px 8px;
+		margin: 4px;
 		border-radius: 3px;
 
 		&:hover {
@@ -75,8 +78,8 @@
 	cursor: pointer;
 	margin-top: 15px;
 	margin-right: auto;
-	margin-left: auto;
-	margin-bottom: 10px;
+	margin-left: 11px;
+	margin-bottom: 55px;
 	color: white;
 }
 
