@@ -1,24 +1,19 @@
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
 
-class ServiceItem extends Component {
-  constructor(props) {
-    super(props);
-    console.log(props);
+export const ServiceItem = props => {
+  // debugger;
+  if (!props.service) {
+    return null;
+  } else {
+    return (
+      <div className="ServiceItem">
+        {props.service.type}
+        {props.service.price}
+        <button onClick={(() => props.deleteService(props.service._id))}>
+          Delete
+        </button>
+      </div>
+    );
   }
-
-  render() {
-    if (!this.props.service) {
-      return null;
-    } else {
-      return (
-        <div className="ServiceItem">
-          {this.props.service.type}
-          {this.props.service.price}
-        </div>
-      );
-    }
-  }
-}
-
-export default ServiceItem;
+};
