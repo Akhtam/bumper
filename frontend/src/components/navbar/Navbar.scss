@@ -30,13 +30,28 @@
 }
 
 .login-button {
-  border: 1px solid black;
-  border-radius: 4px;
+  // border: 1px solid black;
+  border-radius: 7px;
+  padding: 4px 40px;
   height: 40px;
-  width: 150px;
+  width: 100%;
   font-family: ArquitectaHeavy;
   font-size: 20px;
+  text-decoration: none;
+  // color: rgba(0, 0, 0, 0.6);
+  color: white;
+  background: linear-gradient(to right, #36d1dc, #5b86e5) !important;
+  // margin-bottom: 50%;
+  // margin: 15px 0 10px;
+  &:hover {
+	background: linear-gradient(to right, #36d1dc, #5b97e5) !important;
+	}
+ 
 }
+.login-div{
+  margin-bottom: 20%;
+}
+
 
 .dropdown {
   display: inline-block;

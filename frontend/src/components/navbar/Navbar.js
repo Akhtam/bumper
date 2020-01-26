@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { logout } from "../../actions/sessionActions";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
-import {dropdownFunction} from "../dropdown/dropdown";
+import { dropdownFunction } from "../dropdown/dropdown";
 
 class Navbar extends React.Component {
   logoutUser = e => {
@@ -41,9 +41,7 @@ class Navbar extends React.Component {
               </ul>
             </li>
           ) : (
-            <div className="login-button">
-              <Link to={"/login"}>Login </Link>
-            </div>
+          <div className="login-div"> <Link to={"/login"} className="login-button">Login{" "}</Link> </div>
           )}
         </div>
       </div>
@@ -55,8 +53,8 @@ const mspt = state => {
   const username = state.session.isAuthenticated ? state.session.user.name : "";
   return {
     loggedIn: state.session.isAuthenticated,
-	username,
-	businessId: state.entities.business._id
+    username,
+    businessId: state.entities.business._id
   };
 };
 

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
+import "./service.scss"
 
 export const ServiceItem = props => {
   // debugger;
@@ -8,8 +9,8 @@ export const ServiceItem = props => {
   } else {
     return (
       <div className="ServiceItem">
-        {props.service.type}
-        {props.service.price}
+        <div>{props.service.type}</div>
+        <div>{props.service.price}</div>
         <button onClick={(() => props.deleteService(props.service._id))}>
           Delete
         </button>
