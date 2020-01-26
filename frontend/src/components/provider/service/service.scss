@@ -1,49 +1,97 @@
-.ServiceItem{
-    display: flex;
-    justify-content: space-between;
-    min-height: 40px;
-    align-items: center;
-    // background-color: rgb(220,220,220);
-    background-color: rgba(0, 0, 0, 0.03);
-    padding-left: 5px;
-    padding-right: 5px;  
+.ServiceItem {
+  border: 0.5px solid lightgrey;
+  display: flex;
+  margin: 8px auto;
+  width: 390px;
+  height: 80px;
+  border-radius: 5px;
 
-    margin-bottom: 0.5vw; 
+  img {
+		margin: 10px;
+		width: 60px;
+		height: 60px;
+    }
+
+    .servicePrice{
+        display: flex;
+		flex-direction: column;
+        padding: 10px;
+        text-align: center;
+        justify-content: center;
+
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: #4CB8C4;
+        margin-right: 2%;
+        min-width: 60px;
+    }
+
+    .serviceType{
+        display: flex;
+		flex-direction: column;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .Your-Services{
+        position: relative;
+    }
+
+  .ServiceButtons {
+    padding: 5px;
+    margin: 0;
+    width: 100px;
+    height: 23px;
+    
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    background: #e35d5b;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+  }
 }
 
-.YourServices-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-
+.YourServices-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  
+  width: 390px;
+//   z-index: 1000;
+//   position: fixed;
+//   overflow: hidden;
 }
 
 
-.item1{
-    background-color: red;
+.createNewService-button {
+    padding: 8px 20px 5px;
+
+    margin: 0;
+    // width: 100px;
+    // height: 23px;
+
+    text-align: center;
+    border-radius: 10px;
+
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    // background: #008F8C;
+    background-color:#2EAE8E;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
 }
 
-.item2{
-    background-color: red;
+.YourServices-body{
+    // margin-top: 20%;
+    // position: relative;
 }
-
- .createNewService-button{
-        // height: 25px;
-        // // background-color: red;
-        // padding: 5px 15px;
-        // border-radius: 3px;
-        // font-size: 10px;
-        // text-transform: uppercase;
-        // cursor: pointer;
-        // color: white;
-        // background-color: rgba(0, 0, 0, 0.3);
-        // border: none;
-        // margin-bottom: 0;
-        // &:hover {
-        //    border: 1px solid white;
-	    // }
-}
-
-
-

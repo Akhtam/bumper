@@ -32,17 +32,21 @@ class Service extends Component {
             onClick={() => this.props.openModal("create")}
             className="createNewService-button"
           >
-            Create new service
+            New service
           </button>
         </div>
-        {this.props.services.map((service, i) => (
-          <ServiceItem
-            service={service}
-            key={service._id}
-            deleteService={this.deleteService}
-            className={this.isEven(i) ? "item1" : "item2"}
-          />
-        ))}
+
+        <div className="YourServices-body">
+          {this.props.services.map((service, i) => (
+            <ServiceItem
+              service={service}
+              key={service._id}
+              deleteService={this.deleteService}
+              className={this.isEven(i) ? "item1" : "item2"}
+            />
+          ))}
+        </div>
+        
       </div>
     );
   }

@@ -1,0 +1,26 @@
+
+
+.ServiceForm{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 400px;
+    background-color: seashell;
+    align-items: center;
+    h2{
+        text-align: center;
+    }
+    select{
+        width: 400px;
+    }
+    input{
+        width: 400px;
+    }
+
+}
+
+
+
+
+
+

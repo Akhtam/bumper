@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import './service.scss'
+import './serviceForm.scss'
 
 
 
@@ -40,29 +42,39 @@ export default class ServiceForm extends Component {
   render() {
     // debugger;
     return (
-      <div>
+      <div className="ServiceForm">
+        <h2>Create the service you want to offer</h2>
         <form onSubmit={this.handleSubmit}>
-          <select value={this.state.type} onChange={this.handleUpdate("type")}>
-            <option disabled> SELECT</option>
-            {this.types.map((type, i) => (
-              <option key={i} value={type} >
-                {type}
-              </option>
-            ))}
-          </select>
-
-          <input
-            type="field"
-            value={this.state.price}
-            onChange={this.handleUpdate("price")}
-            placeholder="price enter in $29,99"
-          />
-          <input
-            type="field"
-            value={this.state.description}
-            onChange={this.handleUpdate("description")}
-            placeholder="Description"
-          />
+          <div className="selectType">
+            {/* <label>Select service type</label> */}
+            <select
+              value={this.state.type}
+              onChange={this.handleUpdate("type")}
+            >
+              <option disabled> SELECT </option>
+              {this.types.map((type, i) => (
+                <option key={i} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="inputPrice">
+            <input
+              type="field"
+              value={this.state.price}
+              onChange={this.handleUpdate("price")}
+              placeholder="price enter in $29,99"
+            />
+          </div>
+          <div className="inputDescription">
+            <input
+              type="field"
+              value={this.state.description}
+              onChange={this.handleUpdate("description")}
+              placeholder="Description"
+            />
+          </div>
         </form>
         <button onClick={this.handleSubmit}>Create Service</button>
         {/* {this.renderErrors()} */}
