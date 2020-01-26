@@ -1,0 +1,47 @@
+.notification-item {
+	border: 0.5px solid lightgrey;
+	display: flex;
+	margin: 8px auto;
+	width: 390px;
+	height: 80px;
+	border-radius: 5px;
+	img {
+		margin: 10px;
+		width: 60px;
+		height: 60px;
+	}
+	.dates {
+		display: flex;
+		flex-direction: column;
+		padding: 10px;
+		.date {
+			color: tomato;
+			font-weight: 600;
+		}
+	}
+	.confirm-decline {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 55%;
+		.n-buttons {
+            display: flex;
+            justify-content: space-evenly;
+			span {
+				padding: 5px;
+                margin: 0;
+                width: 40%;
+                text-align: center;
+				color: white;
+				border-radius: 10px;
+                font-size: 13px;
+                background: #e35d5b;
+                cursor: pointer;
+                
+            }
+            .accept {
+                background: #4CB8C4;
+            }
+		}
+	}
+}

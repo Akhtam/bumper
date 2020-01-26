@@ -2,6 +2,7 @@ import * as businessApiUtil from '../util/businessUtil';
 
 const serviceSelector = arrServices => {
 	const res = {};
+	if (!arrServices) return res;
 	arrServices.forEach(el => (res[el._id] = el));
 	return res;
 };
