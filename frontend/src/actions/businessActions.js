@@ -1,7 +1,7 @@
 import * as businessApiUtil from '../util/businessUtil';
 
 export const RECEIVE_BUSINESS = 'RECEIVE_BUSINESS';
-const notifications = {
+const apointments = {
 	1: {
 		id: 1,
 		startTime: '2020-02-12, 12pm',
@@ -35,7 +35,7 @@ const receiveBusiness = ({ business, services }) => ({
 	type: RECEIVE_BUSINESS,
 	business,
 	services,
-	notifications
+	apointments
 
 });
 
@@ -43,7 +43,6 @@ export const fetchBusiness = providerId => dispatch => {
 	return businessApiUtil
 		.fetchbusiness(providerId)
 		.then(res => {
-			console.log(res)
 			dispatch(receiveBusiness(res.data))
 		}).catch(err => console.log(err));
 };

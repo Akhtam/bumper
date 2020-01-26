@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-
- class Notifications extends Component {
+class Notifications extends Component {
 	render() {
+
 		return (
 			<div>
 				<h4>Notifications</h4>
@@ -11,6 +12,13 @@ import React, { Component } from 'react';
 	}
 }
 
+const mstp = state => {
+	const notifications = Object.values(state.entities.apointments).filter(
+		apointment => !apointment.confirmed
+	);
+	return {
+		notifications
+	};
+};
 
-export default Notifications
- 
+export default connect(mstp)(Notifications);
