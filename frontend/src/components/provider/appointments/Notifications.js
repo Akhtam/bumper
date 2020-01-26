@@ -6,32 +6,18 @@ class Notifications extends Component {
 		const { notifications } = this.props;
 		// console.log(services, notifications);
 
-		return (
-			<div>
-				{notifications.map(notification => {
-					console.log(this.props.services[0].type );
-					
-					return (
-						<div >
-							{/* <p>{notification.date}</p>
-							<p>{notification.startTime}</p>
-							<p>{notification.endTime}</p> */}
-						</div>
-					);
-				})}
-			</div>
-		);
+		return <div></div>;
 	}
 }
 
 const mstp = state => {
-	const notifications = Object.values(state.entities.appointments).filter(
-		appointment => !appointment.confirmed
-	);
-	return {
-		services: state.entities.services,
-		notifications
-	};
+	// const notifications = Object.values(state.entities.appointments).filter(
+	// 	appointment => !appointment.confirmed
+	// );
+	// return {
+	// 	services: state.entities.services,
+	// 	notifications
+	// };
 };
 
 export default connect(mstp)(Notifications);

@@ -1,20 +1,24 @@
 import * as businessApiUtil from '../util/businessUtil';
 
+const serviceSelector = arrServices => {
+	const res = {};
+	arrServices.forEach(el => (res[el._id] = el));
+	return res;
+};
+
 export const RECEIVE_BUSINESS = 'RECEIVE_BUSINESS';
 
 const receiveBusiness = ({ business, services, appointments }) => ({
 	type: RECEIVE_BUSINESS,
 	business,
-	services,
-	appointments
+	appointments,
+	services: serviceSelector(services)
 });
 
 export const fetchBusiness = providerId => dispatch => {
 	return businessApiUtil
 		.fetchbusiness(providerId)
-		.then(res => {
-			dispatch(receiveBusiness(res.data));
-		})
+		.then(res => dispatch(receiveBusiness(res.data)))
 		.catch(err => console.log(err));
 };
 
