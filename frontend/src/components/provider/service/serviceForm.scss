@@ -1,26 +1,67 @@
+.ServiceForm {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  height: 500px;
+  background-color: rgba(248, 247, 250, 0.884);
+  align-items: center;
+  font-family: "Roboto", sans-serif;
 
-
-.ServiceForm{
+  h2 {
+    text-align: center;
+    margin-bottom: 6%;
+  }
+  .selectTyeAndPrice {
     display: flex;
-    flex-direction: column;
-    width: 600px;
-    height: 400px;
-    background-color: seashell;
+    flex-direction: row;
     align-items: center;
-    h2{
-        text-align: center;
-    }
-    select{
-        width: 400px;
-    }
-    input{
-        width: 400px;
-    }
+    justify-content: center;
+    width: 100%;
 
+    input {
+      width: 100%;
+    }
+    select {
+      width: 95%;
+      height: 32.5px;
+    }
+  }
+
+  select,
+  input {
+    border: 1px solid #dddddd;
+    font-size: 16px;
+    margin-top: 3%;
+    height: 30px;
+    align-items: center;
+    border-radius: 5px;
+    -ms-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+  }
+  input,
+  input[placeholder] {
+    text-align: center;
+  }
+  .inputDescription {
+    width: 100%;
+  }
+  button {
+      margin-top: 8%;
+      width: 250px;
+      height: 10%;
+      font-size: 16px;
+
+      &:hover{
+      border: 2px solid #dddddd;
+  }
+  }
+  
 }
 
-
-
-
-
-
+.service-icon {
+  margin-top: 6%;
+  margin-bottom: 10px;
+  margin-left: 6%;
+}
