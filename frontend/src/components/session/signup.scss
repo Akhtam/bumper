@@ -12,13 +12,38 @@
   background-position: 0% 230%;
 }
 
+.signup-form-container {
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+
+  background-size:100vw 100vw;
+
+    background: url(../../assets/images/newWallpaper.webp) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: 0% 230%;
+}
+
 .blur {
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(195, 195, 195, 0.7);
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+.edit-blur {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(165, 165, 165, 0.7);
   z-index: 0;
 }
 

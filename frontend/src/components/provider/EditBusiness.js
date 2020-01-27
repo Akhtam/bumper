@@ -86,7 +86,7 @@ class EditBusiness extends Component {
     });
     return (
       <div className="edit-form-container">
-        <div className="blur"> </div>
+        <div className="edit-blur"> </div>
         <div className="provider-login-box">
           <div className="provider-top-box">
             <h3 className="head">Business Info</h3>
