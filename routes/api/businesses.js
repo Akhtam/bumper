@@ -75,7 +75,9 @@ router.get('/:providerId', async (req, res) => {
 
 	Business.findOne({ providerId: req.params.providerId }).then(business => {
 		if (business.serviceIds.length === 0) {
-			res.json({ business });
+			res.json({
+				business
+			});
 		} else {
 			let services = [];
 			let ids = 0;
