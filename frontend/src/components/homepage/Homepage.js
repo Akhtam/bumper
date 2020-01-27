@@ -28,6 +28,7 @@ class Homepage extends React.Component {
               </Link>
             </button>
             <h3 className="homepageBody">How Bumper works</h3>
+
           </div>
         </div>
       </div>

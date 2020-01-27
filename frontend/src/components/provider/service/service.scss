@@ -28,10 +28,14 @@
     }
 
     .serviceType{
-        display: flex;
-		flex-direction: column;
-        padding: 10px;
-        justify-content: center;
+      display: flex;
+		  flex-direction: column;
+      padding: 10px;
+      justify-content: center;
+		  align-self: center;
+		  color: #004A61;
+      font-size: 20px;
+
     }
 
     .Your-Services{
@@ -73,8 +77,7 @@
     padding: 8px 20px 5px;
 
     margin: 0;
-    // width: 100px;
-    // height: 23px;
+
 
     text-align: center;
     border-radius: 10px;
@@ -84,14 +87,11 @@
     border-radius: 10px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 14px;
-    // background: #008F8C;
+
     background-color:#2EAE8E;
     cursor: pointer;
     border: none;
     text-transform: uppercase;
 }
 
-.YourServices-body{
-    // margin-top: 20%;
-    // position: relative;
-}
+

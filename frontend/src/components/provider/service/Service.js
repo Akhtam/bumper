@@ -12,15 +12,8 @@ class Service extends Component {
   constructor(props){
     super(props)
     this.deleteService= this.props.deleteService 
-    this.isEven = this.isEven.bind(this)
-    
   }
 
-
-  isEven(index){
-    if (index % 2 === 0) return true;
-    return false;
-  }
 
   render() {
     // debugger;
@@ -42,7 +35,6 @@ class Service extends Component {
               service={service}
               key={service._id}
               deleteService={this.deleteService}
-              className={this.isEven(i) ? "item1" : "item2"}
             />
           ))}
         </div>
