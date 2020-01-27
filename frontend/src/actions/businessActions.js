@@ -7,12 +7,19 @@ const serviceSelector = arrServices => {
 	return res;
 };
 
+const appointmentSelector = appointments => {
+	const res = {};
+	if (!appointments) return res;
+	appointments.forEach(el => (res[el.vehicle._id] = el));
+	return res;
+};
+
 export const RECEIVE_BUSINESS = 'RECEIVE_BUSINESS';
 
 const receiveBusiness = ({ business, services, appointments }) => ({
 	type: RECEIVE_BUSINESS,
 	business,
-	appointments,
+	appointments: appointmentSelector(appointments),
 	services: serviceSelector(services)
 });
 

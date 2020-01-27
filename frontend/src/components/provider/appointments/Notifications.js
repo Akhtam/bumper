@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { acceptAppointment } from '../../../actions/appointmentsActions';
+import {
+	acceptAppointment,
+	removeAppointment
+} from '../../../actions/appointmentsActions';
 
 import NotificationsItem from './NotificationsItem';
 
 class Notifications extends Component {
-
 	render() {
-		
-		const { notifications, services, acceptAppointment } = this.props;
+		const {
+			notifications,
+			services,
+			acceptAppointment,
+			removeAppointment
+		} = this.props;
 		return (
 			<div>
 				<NotificationsItem
 					notifications={notifications}
 					services={services}
 					acceptAppointment={acceptAppointment}
+					removeAppointment={removeAppointment}
 				/>
 			</div>
 		);
@@ -32,7 +39,9 @@ const mstp = state => {
 };
 
 const mdtp = dispatch => ({
-	acceptAppointment: appointment => dispatch(acceptAppointment(appointment))
+	acceptAppointment: appointment => dispatch(acceptAppointment(appointment)),
+	removeAppointment: appointmentId =>
+		dispatch(removeAppointment(appointmentId))
 });
 
 export default connect(mstp, mdtp)(Notifications);

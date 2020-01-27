@@ -1,5 +1,8 @@
 import { RECEIVE_BUSINESS } from '../../actions/businessActions';
-import { ACCEPT_APPOINTMENT } from '../../actions/appointmentsActions';
+import {
+	ACCEPT_APPOINTMENT,
+	REMOVE_APPOINTMENT
+} from '../../actions/appointmentsActions';
 
 const apointmentsReducer = (state = {}, action) => {
 	Object.freeze(state);
@@ -8,7 +11,11 @@ const apointmentsReducer = (state = {}, action) => {
 		case RECEIVE_BUSINESS:
 			return Object.assign({}, state, action.appointments);
 		case ACCEPT_APPOINTMENT:
-			nextState[action.appointment._id] = action.appointment;
+			nextState[action.appointment.vehicle._id] = action.appointment;
+			return nextState;
+		case REMOVE_APPOINTMENT:
+			delete nextState[action.vehicleId];
+
 			return nextState;
 		default:
 			return state;

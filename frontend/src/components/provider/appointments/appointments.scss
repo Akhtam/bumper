@@ -1,0 +1,49 @@
+.appointment-item {
+	border: 0.8px solid lightgrey;
+	display: flex;
+	justify-content: space-between;
+	margin: 8px;
+	height: 80px;
+	border-radius: 5px;
+	font-family: 'Roboto', sans-serif;
+	img {
+		margin: 10px;
+		width: 60px;
+		height: 60px;
+	}
+
+	.dates {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		padding: 10px;
+		background-color: #447b94;
+		font-weight: 300;
+		margin: 1px;
+		color: white;
+	}
+	.vehicle-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		padding: 10px;
+		span {
+			color: #004a61;
+		}
+	}
+
+	.a-service {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		.aa-service {
+			text-align: center;
+		}
+	}
+	.done-button {
+        padding-top: 35px;
+        background-color: #00C6AB;
+        color: white;
+        cursor: pointer;
+	}
+}

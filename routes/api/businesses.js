@@ -29,20 +29,20 @@ router.get('/', (req, res) => {
 	Business.find().then(businesses => res.json(businesses));
 });
 
-router.get('/:providerId', async (req, res) => {
+router.get('/:providerId', (req, res) => {
 	const appointments = [
 		{
-			serviceId: ObjectID('5e2e0f296348550987f35ebd'),
+			serviceId: ObjectID('5e2e2c3a2006ed115d5fe386'),
 			businessId: ObjectID('5e2cc7641bb31394fbf99ace'),
 			vehicle: Vehicles.vehicle1,
 			date: '2020-02-07',
 			startTime: '1:00 pm',
 			endTime: '1:30 pm',
-			confirmed: false,
+			confirmed: true,
 			done: false
 		},
 		{
-			serviceId: ObjectID('5e2e0f296348550987f35ebd'),
+			serviceId: ObjectID('5e2e2c3a2006ed115d5fe386'),
 			businessId: ObjectID('5e2cc7641bb31394fbf99ace'),
 			vehicle: Vehicles.vehicle2,
 			date: '2020-01-31',
@@ -52,7 +52,7 @@ router.get('/:providerId', async (req, res) => {
 			done: false
 		},
 		{
-			serviceId: ObjectID('5e2e0f296348550987f35ebd'),
+			serviceId: ObjectID('5e2e2c3a2006ed115d5fe386'),
 			businessId: ObjectID('5e2cc7641bb31394fbf99ace'),
 			vehicle: Vehicles.vehicle3,
 			date: '2020-01-31',
@@ -62,7 +62,7 @@ router.get('/:providerId', async (req, res) => {
 			done: false
 		},
 		{
-			serviceId: ObjectID('5e2e0f296348550987f35ebd'),
+			serviceId: ObjectID('5e2e2c3a2006ed115d5fe386'),
 			businessId: ObjectID('5e2cc7641bb31394fbf99ace'),
 			vehicle: Vehicles.vehicle4,
 			date: '2020-02-03',

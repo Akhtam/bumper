@@ -1,7 +1,7 @@
 import React from 'react';
 import './notificationItem.scss';
 
-const NotificationsItem = ({ notifications, services, acceptAppointment }) => {
+const NotificationsItem = ({ notifications, services, acceptAppointment, removeAppointment }) => {
 	
 	const incomingAppointments = notifications.map((notification, i) => {
 		const day = new Date(notification.date)
@@ -23,7 +23,7 @@ const NotificationsItem = ({ notifications, services, acceptAppointment }) => {
 
 					<div className='n-buttons'>
 						<span className='accept' onClick={() => acceptAppointment(notification)}>ACCEPT</span>
-						<span>DECLINE</span>
+						<span onClick={() => removeAppointment(notification.vehicle._id)}>DECLINE</span>
 					</div>
 				</div>
 			</div>
