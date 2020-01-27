@@ -42,8 +42,12 @@ background-color: rgba(255, 255, 255, 0.972);
   border-radius: 7px;
   border: none;
   outline: none;
-  font-size: 20px;
+  font-size: 16px;
   cursor: pointer;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+
+
   margin-bottom: 32px;
   color: white;
   display: flex;
@@ -57,11 +61,7 @@ background-color: rgba(255, 255, 255, 0.972);
   background-color: #38ef7d;
 }
 
-.login-button a {
-  text-decoration: none;
-  font-family: "Roboto", sans-serif;
-  color: white;
-}
+
 
 .dropdown {
   display: inline-block;
