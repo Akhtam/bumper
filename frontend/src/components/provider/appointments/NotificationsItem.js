@@ -18,8 +18,8 @@ const NotificationsItem = ({ notifications, services }) => {
 					<div>{notification.endTime}</div>
 				</div>
 				<div className='confirm-decline'>
-					{/* <div>{services[notification.serviceId].type}</div> */}
-					<div>Oil Change</div>
+					<div className='n-service'>{services[notification.serviceId].type}</div>
+
 					<div className='n-buttons'>
 						<span className='accept'>ACCEPT</span>
 						<span>DECLINE</span>

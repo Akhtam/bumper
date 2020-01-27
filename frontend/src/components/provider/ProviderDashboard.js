@@ -21,7 +21,7 @@ class ProviderDashboard extends Component {
 		);
 	};
 	render() {
-		if(!this.props.providerId) return null;
+		// if(!this.props.providerId) return null;
 		return (
 			<div className='provider-container'>
 				<Modal />

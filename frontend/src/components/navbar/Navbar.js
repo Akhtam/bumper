@@ -28,13 +28,14 @@ class Navbar extends React.Component {
                 ...
               </button>
               <ul id="myDropdown" className="dropdown-content">
-                <li>
-                  <Link
+                
+                  {this.props.role === "Provider" ? <li><Link
                     to={`/provider-dashboard/${this.props.businessId}/edit`}
                   >
                     <button>Edit</button>
-                  </Link>
-                </li>
+                  </Link></li> : null
+                  }
+                
                 <li>
                   <button onClick={this.logoutUser}>Logout</button>
                 </li>
@@ -51,10 +52,12 @@ class Navbar extends React.Component {
 
 const mspt = state => {
   const username = state.session.isAuthenticated ? state.session.user.name : "";
+  const role = state.session.isAuthenticated ? state.session.user.role : "";
   return {
     loggedIn: state.session.isAuthenticated,
-    username,
-    businessId: state.entities.business._id
+	username,
+  businessId: state.entities.business._id,
+  role
   };
 };
 

@@ -43,7 +43,7 @@ export default class ServiceForm extends Component {
     // debugger;
     return (
       <div className="ServiceForm">
-        <h2>Create the service you want to offer</h2>
+        <h2>Create your Service</h2>
         <form onSubmit={this.handleSubmit}>
           <div className="selectType">
             {/* <label>Select service type</label> */}
