@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import "./service.scss";
 
 export const ServiceItem = props => {
-  // debugger;
+
   if (!props.service) {
     return null;
   } else {

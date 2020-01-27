@@ -18,7 +18,7 @@ class Navbar extends React.Component {
 
   demoLogin() {
     const user = {
-      email: "demo@email.com",
+      email: "jo@jo.com",
       password: "123456"
     };
     this.setState(user);

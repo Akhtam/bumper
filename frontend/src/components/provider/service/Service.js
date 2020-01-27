@@ -16,7 +16,6 @@ class Service extends Component {
 
 
   render() {
-    // debugger;
     return (
       <div>
         <div className="YourServices-header">

@@ -6,7 +6,6 @@ export const createService = (data) => {
 }
 
 export const deleteServiceUtil = (serviceId) => {
-    debugger
     return axios.delete(`api/services/delete/${serviceId}`);
 }
 

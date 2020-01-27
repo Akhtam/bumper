@@ -35,7 +35,7 @@ export default class ServiceForm extends Component {
   // }
 
   render() {
-    // debugger;
+
     return (
       <div className="ServiceForm">
         <div className="service-icon">
