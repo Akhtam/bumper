@@ -1,98 +1,136 @@
 .container {
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	background-position: center;
-	position: relative;
-	z-index: 1;
-	background-color: rgba(248, 247, 250, 0.884);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  background-color: #108dc7;
+  overflow: hidden;
 
-	.login-box {
-		width: 500px;
-		margin-top: 3%;
-		margin: auto;
+  background-size: 100vw 100vw;
 
-		.top-box {
-			padding: 60px 80px;
-		}
+  background: url(../../assets/images/newWallpaper.webp) no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: 0% 230%;
 
-		.title {
-			text-align: center;
-			margin-bottom: 20px;
-			margin-top: 10px;
-			color: #344b47;
+  .blur {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
 
-			font-size: 30px;
+  .login-box {
+	width: 450px;
+	height: fit-content;
+    margin: 100px auto;
+	border-radius: 15px;
+	      background-color: rgba(248, 247, 250, 0.938);
 
-			font-family: 'Roboto', sans-serif;
 
-			h1 {
-				font-weight: bold;
-			}
-		}
-	}
+    -webkit-box-shadow: -1px 0px 31px 0px rgba(61, 59, 61, 1);
+    -moz-box-shadow: -1px 0px 31px 0px rgba(61, 59, 61, 1);
+    box-shadow: -1px 0px 31px 0px rgba(61, 59, 61, 1);
+    overflow: hidden;
+    z-index: 10;
+
+    .top-box {
+      padding: 60px;
+      background-color: rgba(248, 247, 250, 0.938);
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 20px;
+      margin-top: 10px;
+      color: #344b47;
+
+      font-size: 30px;
+
+      font-family: "Roboto", sans-serif;
+
+      h1 {
+        font-weight: bold;
+      }
+    }
+  }
 }
 
 .textbox {
-	width: 100%;
-    padding: 8px 8px;
-    margin: 4px 0px;
-	border-radius: 5px;
+  width: 100%;
+  padding: 8px 8px;
+  margin: 4px 0px;
+  border-radius: 5px;
 
-	input {
-		height: 40px;
-		font-size: 14px;
-		font-weight: 200;
-		float: left;
-		width: 94%;
-		min-width: 160px;
-		border: 1px solid #dddddd;
-		padding: 0px 8px;
-		margin: 4px;
-		border-radius: 3px;
+  input {
+    height: 40px;
+    font-size: 14px;
+    font-weight: 200;
+    float: left;
+    width: 94%;
+    min-width: 160px;
+    border: 1px solid #dddddd;
+    padding: 0px 8px;
+    margin: 4px;
+    border-radius: 3px;
 
-		&:hover {
-			border: 0.6px solid rgb(170, 170, 170);
-		}
+    &:hover {
+      border: 0.6px solid rgb(170, 170, 170);
+    }
 
-		&:focus {
-			box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-			border: 1px solid rgba(81, 203, 238, 1);
-		}
-	}
+    &:focus {
+      box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+      border: 1px solid rgba(81, 203, 238, 1);
+    }
+  }
 }
 
 .textbox input::placeholder {
-	color: #9c9c9c;
+  color: #9c9c9c;
 }
 
 .button {
-	width: 100%;
-	padding: 8px;
-	border-radius: 7px;
-	border: none;
-	outline: none;
-	font-size: 20px;
-	cursor: pointer;
-	margin-top: 15px;
-	margin-right: auto;
-	margin-left: 11px;
-	margin-bottom: 55px;
-	color: white;
+  width: 100%;
+  padding: 8px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-right: auto;
+  margin-left: 11px;
+  color: white;
 }
 
 .form-button {
-	background: linear-gradient(to right, #36d1dc, #5b86e5) !important;
+  background: #11998e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #38ef7d,
+    #11998e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #38ef7d,
+    #11998e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-	&:hover {
-	background: linear-gradient(to right, #36d1dc, #5b97e5) !important;
-	}
+  &:hover {
+    background: linear-gradient(to right, #11998e, #38ef7d) !important;
+  }
 }
 
 .login-icon {
-    svg {
-        margin-left: 32%;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

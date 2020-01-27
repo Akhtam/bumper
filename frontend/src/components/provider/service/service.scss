@@ -1,0 +1,97 @@
+.ServiceItem {
+  border: 0.5px solid lightgrey;
+  display: flex;
+  margin: 8px auto;
+  width: 390px;
+  height: 80px;
+  border-radius: 5px;
+
+  img {
+		margin: 10px;
+		width: 60px;
+		height: 60px;
+    }
+
+    .servicePrice{
+        display: flex;
+		flex-direction: column;
+        padding: 10px;
+        text-align: center;
+        justify-content: center;
+
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: #4CB8C4;
+        margin-right: 2%;
+        min-width: 60px;
+    }
+
+    .serviceType{
+      display: flex;
+		  flex-direction: column;
+      padding: 10px;
+      justify-content: center;
+		  align-self: center;
+		  color: #004A61;
+      font-size: 20px;
+
+    }
+
+    .Your-Services{
+        position: relative;
+    }
+
+  .ServiceButtons {
+    padding: 5px;
+    margin: 0;
+    width: 100px;
+    height: 23px;
+    
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    background: #e35d5b;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+  }
+}
+
+.YourServices-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  
+  width: 390px;
+//   z-index: 1000;
+//   position: fixed;
+//   overflow: hidden;
+}
+
+
+.createNewService-button {
+    padding: 8px 20px 5px;
+
+    margin: 0;
+
+
+    text-align: center;
+    border-radius: 10px;
+
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+
+    background-color:#2EAE8E;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+}
+
+
