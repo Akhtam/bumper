@@ -12,7 +12,9 @@ html, body {
     // justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 900px;
+    // height: 900px;
+    height: 100%;
+
     
     
     background-size:100vw 100vw;
@@ -21,7 +23,7 @@ html, body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-position: 0% 230%;
+    background-position: 0% 120%;
 
 }
 
@@ -56,7 +58,7 @@ html, body {
         flex-wrap: wrap;
         justify-content: space-between;
         width: 50%;
-        margin-top: 10%;
+        margin-top: 5%;
 
         button {
             cursor: pointer;
@@ -104,7 +106,7 @@ html, body {
   height: 4rem;
   line-height: 4rem;
   text-align: center;
-  bottom: 2rem;
+  bottom: 1rem;
   margin-left: -3rem;
   left: 50%;
   animation: bounce 1.5s ease infinite;
@@ -124,8 +126,18 @@ html, body {
   width: 100%;
   height: 100vh;
 //   background: #111;
-    background: transparent;
+  background: transparent;
   position: relative;
 }
 
+
+.homepageBody{
+  padding-top: 10%;
+  margin: 0 auto;
+  // text-decoration: underline;
+  padding-bottom: 4px;
+  border-bottom: 2px solid white;
+  
+
+}
 

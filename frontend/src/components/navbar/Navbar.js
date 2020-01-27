@@ -47,7 +47,9 @@ class Navbar extends React.Component {
         </div>
       </div>
     );
+    
   }
+  
 }
 
 const mspt = state => {

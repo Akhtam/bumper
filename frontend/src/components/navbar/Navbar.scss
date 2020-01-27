@@ -8,6 +8,8 @@
 
   box-sizing: border-box;
   box-shadow: 5px 10px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+
 
   h1 {
     // color: black;
@@ -30,19 +32,18 @@
 }
 
 .login-button {
-  // border: 1px solid black;
-  // border-radius: 4px;
-  // height: 40px;
-  // width: 150px;
-  // font-family: ArquitectaHeavy;
-  // font-size: 20px;
-  width: 68px;
+ 
+  width: 100px;
   padding: 8px;
   border-radius: 7px;
   border: none;
   outline: none;
-  font-size: 20px;
+  font-size: 16px;
   cursor: pointer;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+
+
   margin-bottom: 32px;
   color: white;
   display: flex;
@@ -52,11 +53,6 @@
   background-color: #5b86e5;
 }
 
-.login-button a {
-  text-decoration: none;
-  font-family: "Roboto", sans-serif;
-  color: white;
-}
 
 
 .dropdown {
