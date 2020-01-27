@@ -3,20 +3,20 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0% 2% 0% 2%;
+  padding: 0% 2%;
   max-height: 50px;
-
-  box-sizing: border-box;
-  box-shadow: 5px 10px rgba(0, 0, 0, 0.6);
-  overflow: hidden;
-
+background-color: rgba(255, 255, 255, 0.972);  
+  border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
 
   h1 {
-    // color: black;
     color: rgba(0, 0, 0, 0.6);
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     font-size: 25px;
-    margin-right: 74px;
+    margin-right: 110px;
     margin-top: -18px;
   }
 
@@ -31,10 +31,14 @@
   }
 }
 
+.login-buttons {
+  display: flex;
+  margin-right: 30px;
+}
+
 .login-button {
- 
-  width: 100px;
-  padding: 8px;
+  padding: 8px 10px;
+  margin-left: 14px;
   border-radius: 7px;
   border: none;
   outline: none;
@@ -50,7 +54,11 @@
   justify-content: center;
   align-items: center;
 
-  background-color: #5b86e5;
+  background-color: #11998e;
+}
+
+.login-button:hover {
+  background-color: #38ef7d;
 }
 
 
@@ -64,7 +72,7 @@
   font-size: 56px;
   border: none;
   cursor: pointer;
-  margin-right: 5px;
+  margin-right: 43px;
   font-weight: 400;
   position: absolute;
   right: 12px;
@@ -81,7 +89,7 @@
   display: none;
   position: absolute;
   top: 32px;
-  right: 0;
+  right: 54px;
   background-color: #fff;
   border-radius: 3px;
   z-index: 25;

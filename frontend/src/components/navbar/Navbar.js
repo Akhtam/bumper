@@ -1,11 +1,34 @@
 import React from "react";
 import { connect } from "react-redux";
-import { logout } from "../../actions/sessionActions";
+import { logout, login } from "../../actions/sessionActions";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import { dropdownFunction } from "../dropdown/dropdown";
 
 class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: ""
+    };
+
+    this.demoLogin = this.demoLogin.bind(this);
+  }
+
+  demoLogin() {
+    const user = {
+      email: "demo@email.com",
+      password: "123456"
+    };
+    this.setState(user);
+    this.loginUser(user);
+  }
+
+  loginUser = user => {
+    this.props.login(user);
+  };
+
   logoutUser = e => {
     e.preventDefault();
     this.props.logout();
@@ -28,21 +51,30 @@ class Navbar extends React.Component {
                 ...
               </button>
               <ul id="myDropdown" className="dropdown-content">
-                
-                  {this.props.role === "Provider" ? <li><Link
-                    to={`/provider-dashboard/${this.props.businessId}/edit`}
-                  >
-                    <button>Edit</button>
-                  </Link></li> : null
-                  }
-                
+                {this.props.role === "Provider" ? (
+                  <li>
+                    <Link
+                      to={`/provider-dashboard/${this.props.businessId}/edit`}
+                    >
+                      <button>Edit</button>
+                    </Link>
+                  </li>
+                ) : null}
+
                 <li>
                   <button onClick={this.logoutUser}>Logout</button>
                 </li>
               </ul>
             </li>
           ) : (
-          <div className="login-div"> <Link to={"/login"} className="login-button">Login{" "}</Link> </div>
+            <div className="login-buttons">
+              <div className="login-button">
+                <Link to={"/login"}>Login </Link>
+              </div>
+              <button className="login-button" onClick={this.demoLogin}>
+                Demo Login{" "}
+              </button>
+            </div>
           )}
         </div>
       </div>
@@ -57,10 +89,10 @@ const mspt = state => {
   const role = state.session.isAuthenticated ? state.session.user.role : "";
   return {
     loggedIn: state.session.isAuthenticated,
-	username,
-  businessId: state.entities.business._id,
-  role
+    username,
+    businessId: state.entities.business._id,
+    role
   };
 };
 
-export default connect(mspt, { logout })(Navbar);
+export default connect(mspt, { logout, login })(Navbar);

@@ -68,57 +68,58 @@ class OwnerSignupForm extends Component {
 
 	render() {
 		return (
-			<div className='container'>
-				<div className='login-box'>
-					<div className='top-box'>
-						<div className='login-icon'>
-							<FontAwesomeIcon
-								color='rgba(0, 0, 0, 0.6)'
-								size='6x'
-								icon={faCar}
-							/>
-						</div>
-						<form onSubmit={this.handleSubmit}>
-							<div className='title'>
-								<h4>Service Driven</h4>
-							</div>
-							<div className='textbox'>
-								<input
-									type='text'
-									value={this.state.name}
-									onChange={this.update('name')}
-									placeholder='Name'
-								/>
-							</div>
-							<div className='textbox'>
-								<input
-									type='text'
-									value={this.state.email}
-									onChange={this.update('email')}
-									placeholder='Email'
-								/>
-							</div>
-							<div className='textbox'>
-								<input
-									type='password'
-									value={this.state.password}
-									onChange={this.update('password')}
-									placeholder='Password'
-								/>
-							</div>
-							<div>
-								<input
-									type='submit'
-									value='Sign Up'
-									className='form-button button'
-								/>
-							</div>
-							{this.renderErrors()}
-						</form>
-					</div>
-				</div>
-			</div>
-		);
+      <div className="container">
+        <div className="blur"> </div>
+        <div className="login-box">
+          <div className="top-box">
+            <div className="login-icon">
+              <FontAwesomeIcon
+                color="rgba(0, 0, 0, 0.6)"
+                size="6x"
+                icon={faCar}
+              />
+            </div>
+            <form onSubmit={this.handleSubmit}>
+              <div className="title">
+                <h4>Service Driven</h4>
+              </div>
+              <div className="textbox">
+                <input
+                  type="text"
+                  value={this.state.name}
+                  onChange={this.update("name")}
+                  placeholder="Name"
+                />
+              </div>
+              <div className="textbox">
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                />
+              </div>
+              <div className="textbox">
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                />
+              </div>
+              <div>
+                <input
+                  type="submit"
+                  value="Sign Up"
+                  className="form-button button"
+                />
+              </div>
+              {this.renderErrors()}
+            </form>
+          </div>
+        </div>
+      </div>
+    );
 	}
 }
 
