@@ -1,7 +1,8 @@
 import React from 'react';
 import './notificationItem.scss';
 
-const NotificationsItem = ({ notifications, services }) => {
+const NotificationsItem = ({ notifications, services, acceptAppointment }) => {
+	
 	const incomingAppointments = notifications.map((notification, i) => {
 		const day = new Date(notification.date)
 			.toDateString()
@@ -21,7 +22,7 @@ const NotificationsItem = ({ notifications, services }) => {
 					<div className='n-service'>{services[notification.serviceId].type}</div>
 
 					<div className='n-buttons'>
-						<span className='accept'>ACCEPT</span>
+						<span className='accept' onClick={() => acceptAppointment(notification)}>ACCEPT</span>
 						<span>DECLINE</span>
 					</div>
 				</div>
