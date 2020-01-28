@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 
 import Completed from './Completed';
 import Uncompleted from './Uncompleted';
-import './appointments.scss'
+import './appointments.scss';
 
 class Appointments extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			completed: false,
-			uncompleted: true
+			completed: true,
+			uncompleted: false
 		};
 	}
 
@@ -24,19 +24,21 @@ class Appointments extends Component {
 	render() {
 		return (
 			<div>
-				<button onClick={this.handleComplete}>In Process</button>
-				<button onClick={this.handleComplete}>Completed</button>
-				{this.state.uncompleted ? (
-					<Uncompleted
-						incompleted={this.props.incompleted}
-						services={this.props.services}
-					/>
-				) : (
+				{/* <button onClick={this.handleComplete}>
+					{this.state.completed ? 'Completed' : `In Process`}
+				</button> */}
+				{/* {this.state.uncompleted ? (
 					<Completed
 						completed={this.props.completed}
 						services={this.props.services}
 					/>
-				)}
+				) : (
+	
+				)} */}
+				<Uncompleted
+					incompleted={this.props.incompleted}
+					services={this.props.services}
+				/>
 			</div>
 		);
 	}
