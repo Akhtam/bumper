@@ -4,7 +4,11 @@ export const RECEIVE_BUSINESS = 'RECEIVE_BUSINESS';
 const serviceSelector = arrServices => {
 	const res = {};
 	if (!arrServices) return res;
-	arrServices.forEach(el => (res[el._id] = el));
+	arrServices.forEach(el => {
+		if (el) {
+			res[el._id] = el;
+		}
+	});
 	return res;
 };
 
@@ -16,12 +20,13 @@ const appointmentSelector = appointments => {
 };
 
 const receiveBusiness = ({ business, services, appointments }) => {
-	
+	appointments = appointmentSelector(appointments);
+	services = serviceSelector(services);
 	return {
 		type: RECEIVE_BUSINESS,
 		business,
-		appointments: appointmentSelector(appointments),
-		services: serviceSelector(services)
+		appointments,
+		services
 	};
 };
 

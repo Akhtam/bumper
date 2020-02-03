@@ -35,10 +35,10 @@ class Appointments extends Component {
 				) : (
 	
 				)} */}
-				<Uncompleted
+				{/* <Uncompleted
 					incompleted={this.props.incompleted}
 					services={this.props.services}
-				/>
+				/> */}
 			</div>
 		);
 	}

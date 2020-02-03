@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import "./service.scss";
 
 export const ServiceItem = props => {
-
-  if (!props.service || props.service._id === '5e3868452bdf345bcd0c18b3') {
+	
+  if (!props.service || props.service._id === '5e3872eb7ca596efa3352645') {
 		return null;
   } else {
 		return (
