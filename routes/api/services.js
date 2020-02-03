@@ -55,18 +55,20 @@ router.put('/edit/:id', (req, res) => {
 	});
 });
 
-router.delete("/delete/:id", (req, res) => {
-  Service.findById(req.params.id).then(service => {
-    const businessId = service.businessId;
-    const serviceId = service.id;
-    Service.findOneAndDelete(service.id).then(service => {
-      Business.findById(businessId).then(business => {
-        business.serviceIds.remove(serviceId);
-        business.save();
-        res.json(business);
-      });
-    })
-  });
+router.delete('/delete/:id', (req, res) => {
+	Service.findById(req.params.id).then(service => {
+		console.log(service, '1');
+		const businessId = service.businessId;
+		const serviceId = service.id;
+		Business.findById(businessId).then(business => {
+			business.serviceIds.remove(serviceId);
+			business.save();
+			console.log(serviceId)
+			Service.deleteOne({ _id: serviceId }).then(() =>
+				res.json(business)
+			);
+		});
+	});
 });
 
 module.exports = router;

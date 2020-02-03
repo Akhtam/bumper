@@ -21,6 +21,7 @@ const NotificationsItem = ({ notifications, services, acceptAppointment, removeA
 					<div>{notification.endTime}</div>
 				</div>
 				<div className='confirm-decline'>
+					
 					<div className='n-service'>{services[notification.serviceId].type}</div>
 
 					<div className='n-buttons'>
