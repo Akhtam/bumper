@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Uncompleted = ({ incompleted, services }) => {
-	const incompleteAppointments = incompleted.map((appointment, i) => {
+	const incompleteAppointments =  incompleted.map((appointment, i) => {
 		const { make, model, year } = appointment.vehicle.attributes;
 		const service = services[appointment.serviceId].type
 			.split(' ')

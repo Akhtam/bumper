@@ -15,14 +15,17 @@ class Notifications extends Component {
 			acceptAppointment,
 			removeAppointment
 		} = this.props;
+		console.log(notifications);
+		
 		return (
 			<div>
+				{notifications.length > 0 ?
 				<NotificationsItem
 					notifications={notifications}
 					services={services}
 					acceptAppointment={acceptAppointment}
 					removeAppointment={removeAppointment}
-				/>
+				/> : null}
 			</div>
 		);
 	}
