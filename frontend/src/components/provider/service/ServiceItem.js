@@ -4,7 +4,7 @@ import "./service.scss";
 
 export const ServiceItem = props => {
 
-  if (!props.service || props.service._id === '5e2f97098d90f7001726ebfc') {
+  if (!props.service || props.service._id === '5e3868452bdf345bcd0c18b3') {
 		return null;
   } else {
 		return (
