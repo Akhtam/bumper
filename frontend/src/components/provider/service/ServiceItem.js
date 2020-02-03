@@ -11,7 +11,7 @@ export const ServiceItem = props => {
 				<div className='servicePrice'>{props.service.price}</div>
 				<div className='serviceType'>
 					{props.service.type}{' '}
-					{props.service._id === '5e3872eb7ca596efa3352645' ? (
+					{props.service._id === '5e38ab65d4019e02c0894202' ? (
 						''
 					) : (
 						<button
