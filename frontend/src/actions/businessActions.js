@@ -1,4 +1,5 @@
 import * as businessApiUtil from '../util/businessUtil';
+export const RECEIVE_BUSINESS = 'RECEIVE_BUSINESS';
 
 const serviceSelector = arrServices => {
 	const res = {};
@@ -14,14 +15,15 @@ const appointmentSelector = appointments => {
 	return res;
 };
 
-export const RECEIVE_BUSINESS = 'RECEIVE_BUSINESS';
-
-const receiveBusiness = ({ business, services, appointments }) => ({
-	type: RECEIVE_BUSINESS,
-	business,
-	appointments: appointmentSelector(appointments),
-	services: serviceSelector(services)
-});
+const receiveBusiness = ({ business, services, appointments }) => {
+	
+	return {
+		type: RECEIVE_BUSINESS,
+		business,
+		appointments: appointmentSelector(appointments),
+		services: serviceSelector(services)
+	};
+};
 
 export const fetchBusiness = providerId => dispatch => {
 	// debugger
