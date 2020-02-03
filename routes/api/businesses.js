@@ -82,13 +82,16 @@ router.get('/:providerId', (req, res) => {
 				business
 			});
 		} else {
+
 			let services = [];
 			let ids = 0;
 			while (ids < business.serviceIds.length) {
 				const id = business.serviceIds[ids];
 				Service.findById(id).then(result => {
 					services.push(result);
+					
 					if (services.length === business.serviceIds.length) {
+
 						res.json({
 							business: business,
 							services: services,

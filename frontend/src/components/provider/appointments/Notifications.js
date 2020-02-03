@@ -15,7 +15,6 @@ class Notifications extends Component {
 			acceptAppointment,
 			removeAppointment
 		} = this.props;
-		console.log(notifications);
 		
 		return (
 			<div>
