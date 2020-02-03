@@ -22,6 +22,7 @@ class Appointments extends Component {
 		});
 	};
 	render() {
+		if (this.props.completed.length === 0 && this.props.incompleted.length === 0 ) return null;
 		return (
 			<div>
 				{/* <button onClick={this.handleComplete}>

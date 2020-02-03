@@ -10,6 +10,7 @@ import './provider.scss';
 
 class ProviderDashboard extends Component {
 	componentDidMount() {
+		console.log(this.props)
 		this.props.fetchBusiness(this.props.providerId)
 	}
 
