@@ -9,6 +9,7 @@ import Homepage from './homepage/Homepage';
 import OwnerDashboard from './ownerDashboard/OwnerDashboard';
 import ProviderDashboard from './provider/ProviderDashboard';
 import EditBusiness from './provider/EditBusiness';
+import EditService from './provider/service/EditService';
 
 class App extends Component {
 	render() {
@@ -44,6 +45,11 @@ class App extends Component {
 						exact
 						path='/provider-dashboard/:businessId/edit'
 						component={EditBusiness}
+					/>
+					<ProtectedRoute
+					exact
+					path='/provider-dashboard/:serviceId'
+					component={EditService}
 					/>
 					<AuthRoute path='/' component={Homepage} />
 				</Switch>

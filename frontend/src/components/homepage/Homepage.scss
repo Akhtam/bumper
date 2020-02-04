@@ -33,6 +33,7 @@ footer {
         margin-top: 10px;
         font-size: 20px;
         font-weight: bolder;
+        letter-spacing: 2px;
 
       }
       img {
@@ -46,8 +47,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 60vw;
-  // background-size:100vw 100vw;
+  height: 57vw;
   background: url(../../assets/images/HomeBackground.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;

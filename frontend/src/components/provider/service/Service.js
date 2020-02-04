@@ -5,6 +5,7 @@ import {deleteService} from "../../../actions/serviceActions"
 import { ServiceItem } from "./ServiceItem";
 // import ServiceItem  from "./ServiceItem";
 import './service.scss'
+import { faThumbsDown } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -48,7 +49,7 @@ const mstp = state => ({
 });
 const mapDispatchToProps = dispatch => ({
   openModal: modal => dispatch(openModal(modal)),
-  deleteService: serviceId => dispatch(deleteService(serviceId))
+  deleteService: serviceId => dispatch(deleteService(serviceId)),
 });
 
 export default connect(mstp, mapDispatchToProps)(Service);

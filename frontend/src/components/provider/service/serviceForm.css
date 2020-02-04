@@ -1,0 +1,89 @@
+.ServiceForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 700px;
+  height: 500px;
+  background-color: rgba(248, 247, 250, 0.884);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.ServiceForm h2 {
+  text-align: center;
+  margin-bottom: 6%;
+}
+
+.ServiceForm .selectTyeAndPrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.ServiceForm .selectTyeAndPrice input {
+  width: 100%;
+}
+
+.ServiceForm .selectTyeAndPrice select {
+  width: 95%;
+  height: 32.5px;
+}
+
+.ServiceForm select,
+.ServiceForm input {
+  border: 1px solid #dddddd;
+  font-size: 16px;
+  margin-top: 3%;
+  height: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  -ms-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.ServiceForm input,
+.ServiceForm input[placeholder] {
+  text-align: center;
+}
+
+.ServiceForm .inputDescription {
+  width: 100%;
+}
+
+.ServiceForm button {
+  margin-top: 8%;
+  width: 250px;
+  height: 10%;
+  font-size: 16px;
+}
+
+.ServiceForm button:hover {
+  border: 2px solid #dddddd;
+}
+
+.service-icon {
+  margin-top: 6%;
+  margin-bottom: 10px;
+  margin-left: 6%;
+}
+/*# sourceMappingURL=serviceForm.css.map */
