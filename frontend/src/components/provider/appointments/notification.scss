@@ -1,3 +1,12 @@
 .notification-items {
-    display: flex;
+	display: flex;
+}
+.notification-placeholder {
+	color: #5f7181;
+	display: flex;
+    justify-content: center;
+    svg {
+        margin-top: 20%;
+        margin-left: 40%;
+    }
 }
