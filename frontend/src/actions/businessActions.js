@@ -31,9 +31,13 @@ const receiveBusiness = ({ business, services, appointments }) => {
 };
 
 export const fetchBusiness = providerId => dispatch => {
+	// debugger
 	return businessApiUtil
 		.fetchbusiness(providerId)
-		.then(res => dispatch(receiveBusiness(res.data)))
+		.then(res => {
+			// debugger
+			dispatch(receiveBusiness(res.data))
+		})
 		.catch(err => console.log(err));
 };
 

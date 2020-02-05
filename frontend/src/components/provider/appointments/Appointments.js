@@ -33,7 +33,7 @@ class Appointments extends Component {
 	render() {
 		let doneStyle = this.state.completed ? 'active' : 'inactive';
 		let undoneStyle = this.state.incompleted ? 'active' : 'inactive';
-
+		
 		return (
 			<div>
 				<div className='apps-nav'>
@@ -59,6 +59,7 @@ class Appointments extends Component {
 					<Uncompleted
 						incompleted={this.props.incompleted}
 						services={this.props.services}
+						completeAppointment={this.props.completeAppointment}
 					/>
 				)}
 			</div>
@@ -80,9 +81,9 @@ const mstp = state => {
 	};
 };
 
-// const mdtp = dispatch => ({
+const mdtp = dispatch => ({
+	completeAppointment: appointment => dispatch(completeAppointment(appointment))
+})
 
-// })
 
-
-export default connect(mstp)(Appointments);
+export default connect(mstp, mdtp)(Appointments);

@@ -12,6 +12,6 @@ export const removeAppointment = vehicleId => {
 };
 
 export const completeAppointment = appointment => {
-	console.log(appointment)
+	appointment.done = true;
 	return {type: COMPLETE_APPOINTMENT, appointment}
 }

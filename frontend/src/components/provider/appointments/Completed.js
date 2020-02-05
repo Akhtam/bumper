@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Completed = ({ completed, services }) => {
-	const incompleteAppointments = completed.map((appointment, i) => {
+	const completedAppointments = completed.map((appointment, i) => {
 		const { make, model, year } = appointment.vehicle.attributes;
 		const service = services[appointment.serviceId].type
 			.split(' ')
@@ -30,12 +30,14 @@ const Completed = ({ completed, services }) => {
 					</div>
 				</div>
 				<div className='a-service'>{service}</div>
-				<div className='delv-button'>DONE</div>
+				<div className='delv-button'>
+					<span>DROPPED</span> <span>OFF</span>{' '}
+				</div>
 			</div>
 		);
 	});
 
-	return <div>{incompleteAppointments}</div>;
+	return <div>{completedAppointments}</div>;
 };
 
 export default Completed;
