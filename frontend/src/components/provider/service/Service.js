@@ -49,13 +49,8 @@ const mstp = state => ({
   services: Object.values(state.entities.services)
 });
 const mapDispatchToProps = dispatch => ({
-<<<<<<< HEAD
-  openModal: modal => dispatch(openModal(modal)),
-  // deleteService: serviceId => dispatch(deleteService(serviceId)),
-=======
   openModal: (modal, id) => dispatch(openModal(modal, id)),
   deleteService: serviceId => dispatch(deleteService(serviceId))
->>>>>>> master
 });
 
 export default connect(mstp, mapDispatchToProps)(Service);

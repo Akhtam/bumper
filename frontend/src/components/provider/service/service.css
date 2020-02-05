@@ -53,10 +53,9 @@
   color: #004a61;
   font-size: 20px;
 }
-.serviceType{
-  display: flex;
-  flex-direction: row;
-}
+
+  
+
 
 .ServiceItem .Your-Services {
   position: relative;
@@ -197,5 +196,6 @@
 .editService img {
   height: 25px;
   width: 25px;
+  
 }
 /*# sourceMappingURL=service.css.map */
