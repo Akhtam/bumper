@@ -35,6 +35,7 @@ export const fetchBusiness = providerId => dispatch => {
 	return businessApiUtil
 		.fetchbusiness(providerId)
 		.then(res => {
+			// debugger
 			dispatch(receiveBusiness(res.data))
 		})
 		.catch(err => console.log(err));

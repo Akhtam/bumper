@@ -27,7 +27,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
 	processForm: formData => dispatch(createNewService(formData)),
-	openModal: modal => dispatch(openModal(modal)),
+	openModal: (modal, id) => dispatch(openModal(modal, id)),
   closeModal: () => dispatch(closeModal()),
 });
 

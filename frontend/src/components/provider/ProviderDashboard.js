@@ -4,8 +4,6 @@ import { fetchBusiness } from '../../actions/businessActions';
 import Appointments from './appointments/Appointments';
 import Notifications from './appointments/Notifications';
 import Service from './service/Service';
-
-import Modal from '../modal/modal';
 import './provider.scss';
 
 class ProviderDashboard extends Component {
@@ -24,7 +22,6 @@ class ProviderDashboard extends Component {
 		// if(!this.props.businessId) return null;
 		return (
 			<div className='provider-container'>
-				<Modal />
 				<div className='appointments-container'>
 					<Appointments />
 				</div>

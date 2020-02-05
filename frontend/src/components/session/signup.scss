@@ -118,3 +118,22 @@ input {
 input[type="checkbox"] {
   height: 18px;
 }
+
+.delete {
+  width: 100%;
+  padding: 8px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-right: auto;
+  margin-left: 11px;
+  color: white;
+  background-color: crimson;
+
+  &:hover {
+    background: red;
+  }
+}
