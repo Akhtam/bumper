@@ -1,124 +1,124 @@
 html,
 body {
-  width: auto !important;
-  overflow-x: hidden !important;
-  margin: 0;
-  padding: 0;
-  button:active {
-    outline: none;
-    border: none;
-  }
+	width: auto !important;
+	overflow-x: hidden !important;
+	margin: 0;
+	padding: 0;
+	button:active {
+		outline: none;
+		border: none;
+	}
 }
 
 footer {
-  height: 60px;
-  background-color: rgba(0, 0, 0, 0.8);
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  color: white;
-  align-items: center;
-  .about {
-    color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    .developer {
-      display: flex;
-      flex-direction: row;
-      font-size: 20px;
-      span {
-        padding-right: 5px;
-        margin-top: 10px;
-        font-size: 20px;
-        font-weight: bolder;
-        letter-spacing: 2px;
-
-      }
-      img {
-        height: 40px;
-      }
-    }
-  }
+	height: 60px;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: white;
+	align-items: center;
+	.about {
+		color: white;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		.developer {
+			display: flex;
+			flex-direction: row;
+			font-size: 20px;
+			span {
+				padding-right: 5px;
+				margin-top: 10px;
+				font-size: 20px;
+				font-weight: 400;
+				letter-spacing: 1px;
+			}
+			img {
+				height: 40px;
+			}
+		}
+	}
 }
 
 .homepage-top-presentation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 57vw;
-  background: url(../../assets/images/HomeBackground.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  -o-background-size: cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 60vw;
+	// background-size:100vw 100vw;
+	background: url(../../assets/images/HomeBackground.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	-o-background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
 }
 
 .homepage-top-presentation {
-  h2 {
-    font-family: ArquitectaHeavy;
-    font-size: 70px;
-    line-height: 54px;
-    letter-spacing: 3.4;
-    text-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);
-    color: white;
-    text-align: center;
-    margin-bottom: 10%;
-    margin-top: 20%;
-  }
-  h3 {
-    font-family: ArquitectaHeavy;
-    font-size: 40px;
-    font-style: italic;
-    line-height: 35px;
-    text-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);
-    color: white;
-    text-align: center;
-    margin-top: 5%;
-  }
+	h2 {
+		font-family: 'Roboto', sans-serif;
+		font-size: 70px;
+		line-height: 54px;
+		letter-spacing: 3.4;
+		text-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);
+		color: white;
+		text-align: center;
+		margin-bottom: 10%;
+		margin-top: 20%;
+	}
+	h3 {
+		font-family: 'Roboto', sans-serif;
+		font-size: 40px;
+		font-style: italic;
+		line-height: 35px;
+		text-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);
+		color: white;
+		text-align: center;
+		margin-top: 5%;
+	}
 
-  .homepage-signup-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 50%;
-    margin-top: 5%;
+	.homepage-signup-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: 50%;
+		margin-top: 5%;
 
-    button {
-      cursor: pointer;
-      min-height: 45px;
-      min-width: 300px;
-      text-align: center;
-      font-family: ArquitectaHeavy;
-      font-size: 18px;
-      margin-top: 10px;
-      font-weight: bolder;
-      border-radius: 60px 60px 60px 60px;
-      text-transform: uppercase;
-      padding: 5px 50px;
-      text-align: center;
-      background-color: transparent;
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
+		button {
+			cursor: pointer;
+			min-height: 45px;
+			min-width: 300px;
+			text-align: center;
+			font-family: 'Roboto', sans-serif;
+			font-size: 18px;
+			margin-top: 10px;
+			font-weight: bolder;
+			border-radius: 60px 60px 60px 60px;
+			text-transform: uppercase;
+			padding: 5px 50px;
+			text-align: center;
+			background-color: transparent;
+			background: rgba(0, 0, 0, 0.5);
+			color: white;
 
-      .sign-Link {
-        text-decoration: none;
-        color: white;
-        // color: rgba(0,0,0,0.6)
-      }
-    }
-    button:hover {
-      border: 3px solid white;
-    }
-  }
+			.sign-Link {
+				text-decoration: none;
+				color: white;
+				// color: rgba(0,0,0,0.6)
+			}
+		}
+		button:hover {
+			border: 3px solid white;
+		}
+	}
 }
 
 .homepageBody {
-  padding-top: 10%;
-  margin: 0 auto;
-  // text-decoration: underline;
-  padding-bottom: 4px;
-  border-bottom: 2px solid white;
+	padding-top: 10%;
+	margin: 0 auto;
+	// text-decoration: underline;
+	padding-bottom: 4px;
+	border-bottom: 2px solid white;
 }

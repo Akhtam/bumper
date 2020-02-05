@@ -21,6 +21,8 @@
 		font-weight: 300;
 		margin: 1px;
 		color: white;
+		width: 13%;
+		text-align: center;
 	}
 	.vehicle-info {
 		display: flex;
@@ -41,9 +43,46 @@
 		}
 	}
 	.done-button {
-        padding-top: 35px;
-        background-color: #00C6AB;
-        color: white;
-        cursor: not-allowed;
+		padding-top: 30px;
+		background-color: #00c6ab;
+		color: white;
+		width: 15%;
+		border-radius: 6px;
+		font-size: 20px;
+		text-align: center;
+		cursor: pointer;
+	}
+	.delv-button {
+		display: flex;
+		flex-direction: column;
+		background-color: #b06084;
+		border-radius: 6px;
+		text-align: center;
+		padding-top: 20px;
+		color: white;
+		width: 15%;
+		cursor: pointer;
+	}
+}
+
+.apps-nav {
+	display: flex;
+	justify-content: center;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	.apps-btn {
+		padding: 10px;
+		margin: 15px;
+		cursor: pointer;
+		width: 20%;
+		text-align: center;
+		border-radius: 8px;
+	}
+	.active {
+		background: #4280c8;
+		box-shadow: 0px 5px 7px 0px rgba(76, 120, 166, 1);
+	}
+	.inactive {
+		background: #b0a8b9;
 	}
 }

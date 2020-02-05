@@ -18,6 +18,7 @@ class App extends Component {
 				<header>
 					<Navbar />
 				</header>
+				<Modal />
 				<Switch>
 					<AuthRoute exact path='/login' component={LoginForm} />
 					<AuthRoute
@@ -47,9 +48,9 @@ class App extends Component {
 						component={EditBusiness}
 					/>
 					<ProtectedRoute
-					exact
-					path='/provider-dashboard/:serviceId'
-					component={EditService}
+						exact
+						path='/provider-dashboard/:serviceId'
+						component={EditService}
 					/>
 					<AuthRoute path='/' component={Homepage} />
 				</Switch>
