@@ -10,6 +10,7 @@ const ServiceErrors = (state = _nullErrors, action) => {
   switch (action.type) {
     case RECEIVE_SERVICE_ERRORS:
       return action.errors;
+      
     default:
       return state;
   }

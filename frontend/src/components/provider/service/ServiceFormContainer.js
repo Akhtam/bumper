@@ -19,10 +19,8 @@ const mapStateToProps = state => ({
     "Fluid services",
     "Maintance inspections",
     "Check Engine Light Diagnostic"
-  ]
-
-
-  // errors: state.errors.serviceErrors
+  ],
+  errors: state.errors.serviceErrors
 });
 
 const mapDispatchToProps = dispatch => ({

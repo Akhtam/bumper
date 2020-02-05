@@ -1,8 +1,8 @@
 import {
-	createService,
-	deleteServiceUtil,
-	updateServiceUtil
-} from '../util/serviceUtil';
+  createService,
+  deleteServiceUtil,
+  updateServiceUtil
+} from "../util/serviceUtil";
 
 export const RECEIVE_SERVICE = "RECEIVE_SERVICE";
 export const RECEIVE_SERVICE_ERRORS = "RECEIVE_SERVICE_ERRORS";
@@ -24,10 +24,13 @@ export const removeService = serviceId => ({
 });
 
 export const createNewService = data => dispatch => {
-  return createService(data).then(service => {
-    return dispatch(receiveService(service.data));
-  });
-  // .catch(err => dispatch(receiveServiceErrors(err)));
+  return createService(data)
+    .then(service => {
+      return dispatch(receiveService(service.data));
+    })
+    .catch(err => {
+      return dispatch(receiveServiceErrors(err.response.data));
+    });
 };
 
 export const deleteService = serviceId => dispatch => {
@@ -37,7 +40,7 @@ export const deleteService = serviceId => dispatch => {
 };
 
 export const updateService = service => dispatch => {
-	return updateServiceUtil(service).then(service => {
-		return dispatch(receiveService(service.data));
-	});
+  return updateServiceUtil(service).then(service => {
+    return dispatch(receiveService(service.data));
+  });
 };

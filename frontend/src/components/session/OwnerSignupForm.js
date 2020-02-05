@@ -11,7 +11,7 @@ import './login.scss'
 
 const mapStateToProps = state => {
 	return {
-		errors: state.errors.session
+		errors: state.errors.sessionErrors
 	};
 };
 
@@ -28,8 +28,7 @@ class OwnerSignupForm extends Component {
 			email: '',
 			name: '',
 			password: '',
-			role: 'Owner',
-			errors: {}
+			role: 'Owner'
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -59,8 +58,8 @@ class OwnerSignupForm extends Component {
 	renderErrors() {
 		return (
 			<ul>
-				{Object.keys(this.state.errors).map((error, i) => (
-					<li key={`error-${i}`}>{this.state.errors[error]}</li>
+				{Object.values(this.props.errors).map((error, i) => (
+					<li key={`error-${i}`}>{error}</li>
 				))}
 			</ul>
 		);
@@ -83,6 +82,7 @@ class OwnerSignupForm extends Component {
               <div className="title">
                 <h4>Service Driven</h4>
               </div>
+              <div className="errors">{this.renderErrors()}</div>
               <div className="textbox">
                 <input
                   type="text"
@@ -114,7 +114,6 @@ class OwnerSignupForm extends Component {
                   className="form-button button"
                 />
               </div>
-              {this.renderErrors()}
             </form>
           </div>
         </div>
