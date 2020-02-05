@@ -69,11 +69,15 @@ class Navbar extends React.Component {
           ) : (
             <div className="login-buttons">
               <div className="login-button">
-                <Link to={"/login"}>Login </Link>
+                <Link className="loginLink" to={"/login"}>
+                  Login{" "}
+                </Link>
               </div>
               <button className="login-button" onClick={this.demoLogin}>
                 Demo Login{" "}
               </button>
+
+        
             </div>
           )}
         </div>
