@@ -10,8 +10,3 @@ export const deleteServiceUtil = (serviceId) => {
 }
 
 
-export const updateServiceUtil = (service) => {
-    return axios.put(`api/services/edit/${service.id}`, service)
-}
-
-

@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { updateBusiness } from "../../actions/businessActions";
+import { updateBusiness, fetchBusiness } from "../../actions/businessActions";
 import { openModal } from "../../actions/modalActions";
 import { withRouter } from "react-router-dom";
 import "../session/signup.scss";
 
 const week = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const mstp = state => ({
-  business: state.entities.business
+	business: state.entities.business,
+	providerId: state.session.user.id
 });
+
 const mdtp = dispatch => {
   return {
+    fetchBusiness: providerId => dispatch(fetchBusiness(providerId)),
     editBusiness: business => dispatch(updateBusiness(business)),
     openModal: (modal, id) => dispatch(openModal(modal, id))
   };
@@ -27,6 +30,19 @@ class EditBusiness extends Component {
       endTime: ""
     };
   }
+  	componentDidMount() {
+		this.props.fetchBusiness(this.props.providerId).then(res => {
+			let { title, location, hours, days } = this.props.business;
+			let daysSplit = days.split(' ');
+			this.setState({
+				title,
+				location,
+				days: [],
+				startTime: hours.slice(0, 5),
+				endTime: hours.slice(6)
+			});
+		});
+	}
 
   update(field) {
     return e =>
