@@ -9,7 +9,6 @@ import Homepage from './homepage/Homepage';
 import OwnerDashboard from './ownerDashboard/OwnerDashboard';
 import ProviderDashboard from './provider/ProviderDashboard';
 import EditBusiness from './provider/EditBusiness';
-import Modal from '../components/modal/modal';
 import EditService from './provider/service/EditService';
 
 class App extends Component {
