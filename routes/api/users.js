@@ -35,67 +35,73 @@ router.post("/register", (req, res) => {
       errors.email = "A user has already registered with this email address";
       return res.status(400).json(errors);
     } else {
-        newUser = new User({
-            name: req.body.name,
-            email: req.body.email,
-            role: req.body.role,
-            password: req.body.password
-        });
-      
+      newUser = new User({
+        name: req.body.name,
+        email: req.body.email,
+        role: req.body.role,
+        password: req.body.password
+      });
+
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
           if (err) throw err;
           newUser.password = hash;
 
-          if (newUser.role === 'Owner') {
-              newUser
-                .save()
-                .then(user => {
-                  const payload = { id: user.id, email: user.email, role: user.role };
+          if (newUser.role === "Owner") {
+            newUser
+              .save()
+              .then(user => {
+                const payload = {
+                  id: user.id,
+                  email: user.email,
+                  role: user.role
+                };
 
-                  jwt.sign(
-                    payload,
-                    keys.secretOrKey,
-                    { expiresIn: 3600 },
-                    (err, token) => {
-                      res.json({
-                        success: true,
-                        token: "Bearer " + token
-                      });
-                    }
-                  );
-                })
-                .catch(err => console.log(err));
-          } else {
-              newUser
-                .save()
-                .then(user => {
-                     const business = new Business({
-                      title: req.body.title,
-                      location: req.body.location,
-                      hours: req.body.hours,
-                      days: req.body.days,
-                      providerId: user.id
+                jwt.sign(
+                  payload,
+                  keys.secretOrKey,
+                  { expiresIn: 3600 },
+                  (err, token) => {
+                    res.json({
+                      success: true,
+                      token: "Bearer " + token
                     });
-                    console.log(business); 
-                    business.save();
+                  }
+                );
+              })
+              .catch(err => console.log(err));
+          } else {
+            newUser
+              .save()
+              .then(user => {
+                const business = new Business({
+                  title: req.body.title,
+                  location: req.body.location,
+                  hours: req.body.hours,
+                  days: req.body.days,
+                  providerId: user.id
+                });
+                business.save();
 
-                  const payload = { id: user.id, email: user.email, role: user.role };
-    
-                  jwt.sign(
-                    payload,
-                    keys.secretOrKey,
-                    { expiresIn: 3600 },
-                    (err, token) => {
-                      res.json({
-                        success: true,
-                        token: "Bearer " + token
-                      });
-                    }
-                  );
-                    
-                })
-                .catch(err => console.log(err));
+                const payload = {
+                  id: user.id,
+                  email: user.email,
+                  role: user.role
+                };
+
+                jwt.sign(
+                  payload,
+                  keys.secretOrKey,
+                  { expiresIn: 3600 },
+                  (err, token) => {
+                    res.json({
+                      success: true,
+                      token: "Bearer " + token
+                    });
+                  }
+                );
+              })
+              .catch(err => console.log(err));
           }
         });
       });
@@ -137,6 +143,16 @@ router.post("/login", (req, res) => {
       }
     });
   });
+});
+
+router.delete("/delete/:id", (req, res) => {
+  Business.deleteOne({ providerId: req.params.id })
+    .then(() => {
+      User.deleteOne({ _id: req.params.id })
+        .then(() => res.json("Account successfully deleted"))
+        .catch(err => console.log(err));
+    })
+    .catch(err => console.log(err));
 });
 
 module.exports = router;

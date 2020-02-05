@@ -1,7 +1,8 @@
 import React from 'react';
 
-const Uncompleted = ({ incompleted, services }) => {
-	const incompleteAppointments =  incompleted.map((appointment, i) => {
+const Uncompleted = ({ incompleted, services, completeAppointment }) => {
+
+	const incompletedAppointments = incompleted.map((appointment, i) => {
 		const { make, model, year } = appointment.vehicle.attributes;
 		const service = services[appointment.serviceId].type
 			.split(' ')
@@ -30,12 +31,14 @@ const Uncompleted = ({ incompleted, services }) => {
 					</div>
 				</div>
 				<div className='a-service'>{service}</div>
-				<div className='done-button'>DONE</div>
+				<div className='done-button'
+					onClick={() => completeAppointment(appointment)}
+				>DONE</div>
 			</div>
 		);
 	});
 
-	return <div>{incompleteAppointments}</div>;
+	return <div>{incompletedAppointments}</div>;
 };
 
 export default Uncompleted;

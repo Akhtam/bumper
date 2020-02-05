@@ -14,14 +14,13 @@ export const ServiceItem = props => {
 					{props.service._id === '5e38ab65d4019e02c0894202' ? (
 						''
 					) : (
-						<button
-							className='ServiceButtons'
-							onClick={() =>
-								props.deleteService(props.service._id)
-							}
+						<Link
+							to={`/provider-dashboard/${props.service._id}`}
+							style={{ textDecoration: 'none' }}
+							className='editService'
 						>
-							Delete
-						</button>
+							<img src='https://img.icons8.com/material/24/000000/edit--v1.png'></img>
+						</Link>
 					)}
 				</div>
 			</div>

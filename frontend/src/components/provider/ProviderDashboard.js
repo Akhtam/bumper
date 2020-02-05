@@ -4,14 +4,11 @@ import { fetchBusiness } from '../../actions/businessActions';
 import Appointments from './appointments/Appointments';
 import Notifications from './appointments/Notifications';
 import Service from './service/Service';
-
-import Modal from '../modal/modal';
 import './provider.scss';
 
 class ProviderDashboard extends Component {
 	componentDidMount() {
-		console.log(this.props)
-		this.props.fetchBusiness(this.props.providerId)
+		this.props.fetchBusiness(this.props.providerId);
 	}
 
 	handleEdit = e => {
@@ -21,10 +18,9 @@ class ProviderDashboard extends Component {
 		);
 	};
 	render() {
-		// if(!this.props.businessId) return null;
+		if (!this.props.businessId) return null;
 		return (
 			<div className='provider-container'>
-				<Modal />
 				<div className='appointments-container'>
 					<Appointments />
 				</div>

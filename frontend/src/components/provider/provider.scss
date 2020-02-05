@@ -1,15 +1,29 @@
-.appointments-container {
-	border: 1px solid black;
-	height: 84vh;
+body {
+	  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(165, 165, 165, 0.7);
+  z-index: 0;
 }
-.service-container {
-    border: 1px solid #000000;
-    margin-top: 4vh;
-    height: 40vh;
+.appointments-container {
+	height: 84vh;
 	overflow: scroll;
 	border: 0.5px lightgrey solid;
 	border-radius: 10px;
 	box-shadow: 0px -2px 16px -8px rgba(54, 122, 83, 1);
+	background: white;
+}
+.service-container {
+	border: 1px solid #000000;
+	margin-top: 4vh;
+	height: 40vh;
+	overflow: scroll;
+	border: 0.5px lightgrey solid;
+	border-radius: 10px;
+	box-shadow: 0px -2px 16px -8px rgba(54, 122, 83, 1);
+	background: white;
 }
 
 .notification-container {
@@ -20,13 +34,14 @@
 	flex-direction: column;
 	overflow: scroll;
 	height: 40vh;
+	background: white;
 }
 
 .provider-container {
 	display: flex;
 	width: 100%;
-    margin-top: 90px;
-    justify-content: space-between;
+	margin-top: 90px;
+	justify-content: space-between;
 }
 
 .appointments-container {

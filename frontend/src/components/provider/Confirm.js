@@ -18,20 +18,21 @@ class Confirm extends React.Component {
           <h1>Are you sure?</h1>
           <div className="form-buttons">
             <button
-              className="confirm-button"
-              onClick={() =>
+                className="confirm-button"
+                onClick={() =>
                 this.props
-                  .deleteUser(this.props.id)
-                  .then(() => this.props.closeModal())
-                  .then(() => this.props.logout())
-              }
+                    .deleteUser(this.props.id)
+                    .then(() => this.props.closeModal())
+                    .then(() => this.props.logout())
+                }
             >
-              Yes
+                Yes
             </button>
             <button className="confirm-button" onClick={this.props.closeModal}>
-              Cancel
+                Cancel
             </button>
           </div>
+          
         </div>
       </div>
     );
