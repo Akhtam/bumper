@@ -3,6 +3,8 @@ import './notificationItem.scss';
 
 const NotificationsItem = ({ notifications, services, acceptAppointment, removeAppointment }) => {
 	
+	if (notifications.length === 0) return null;
+	
 	const incomingAppointments = notifications.map((notification, i) => {
 		const day = new Date(notification.date)
 			.toDateString()
