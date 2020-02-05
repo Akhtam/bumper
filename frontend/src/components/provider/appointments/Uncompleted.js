@@ -1,16 +1,6 @@
 import React from 'react';
-import {completeAppointment} from '../../../actions/appointmentsActions'
 
 const Uncompleted = ({ incompleted, services }) => {
-	const handleDone = () => {
-
-	}
-
-
-
-
-
-
 	const incompleteAppointments =  incompleted.map((appointment, i) => {
 		const { make, model, year } = appointment.vehicle.attributes;
 		const service = services[appointment.serviceId].type
