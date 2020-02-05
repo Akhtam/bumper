@@ -62,7 +62,6 @@ router.delete('/delete/:id', (req, res) => {
 		Business.findById(businessId).then(business => {
 			business.serviceIds.remove(serviceId);
 			business.save();
-			console.log(serviceId)
 			Service.deleteOne({ _id: serviceId }).then(() =>
 				res.json(business)
 			);
