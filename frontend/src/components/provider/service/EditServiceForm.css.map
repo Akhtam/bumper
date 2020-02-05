@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,gBAAgB,CAAA;EACZ,UAAU,EAAE,KAAK;CACpB",
-    "sources": [
-        "EditServiceForm.scss"
-    ],
-    "names": [],
-    "file": "EditServiceForm.css"
-}

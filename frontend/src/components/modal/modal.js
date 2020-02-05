@@ -2,6 +2,8 @@ import React from 'react';
 import { closeModal } from '../../actions/modalActions';
 import { connect } from 'react-redux';
 import ServiceFormContainer from "../provider/service/ServiceFormContainer";
+// import EditService from "../provider/service/EditService"
+
 import "./modal.scss";
 
 function Modal({ modal, closeModal }) {
@@ -13,6 +15,9 @@ function Modal({ modal, closeModal }) {
       case "create":
         component = <ServiceFormContainer/>;
         break;
+        // case "edit":   // for later refactoring
+        //     component = <EditService/>;
+        //     break;
       default:
         return null;
     }
