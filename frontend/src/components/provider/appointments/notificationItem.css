@@ -1,0 +1,81 @@
+.notification-item {
+  border-bottom: 0.8px solid lightgrey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 8px auto;
+  width: 390px;
+  height: 80px;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.notification-item img {
+  margin: 10px;
+  width: 60px;
+  height: 60px;
+}
+
+.notification-item .dates {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+}
+
+.notification-item .dates .date {
+  color: tomato;
+  font-weight: 600;
+}
+
+.notification-item .confirm-decline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 55%;
+}
+
+.notification-item .confirm-decline .n-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.notification-item .confirm-decline .n-buttons span {
+  padding: 5px;
+  margin: 0;
+  width: 40%;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  font-size: 13px;
+  background: #e35d5b;
+  cursor: pointer;
+}
+
+.notification-item .confirm-decline .n-buttons .accept {
+  background: #4cb8c4;
+}
+
+.notification-item .n-service {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #004A61;
+  font-size: 20px;
+}
+/*# sourceMappingURL=notificationItem.css.map */

@@ -9,11 +9,58 @@ import Homepage from './homepage/Homepage';
 import OwnerDashboard from './ownerDashboard/OwnerDashboard';
 import ProviderDashboard from './provider/ProviderDashboard';
 import EditBusiness from './provider/EditBusiness';
+<<<<<<< HEAD
+import EditService from './provider/service/EditService';
+=======
 import Modal from '../components/modal/modal';
+>>>>>>> master
 
 class App extends Component {
 	render() {
 		return (
+<<<<<<< HEAD
+			<div>
+				<header>
+					<Navbar />
+				</header>
+				<Switch>
+					<AuthRoute exact path='/login' component={LoginForm} />
+					<AuthRoute
+						exact
+						path='/ownersignup'
+						com
+						component={OwnerSignupForm}
+					/>
+					<AuthRoute
+						exact
+						path='/providersignup'
+						component={ProviderSignupForm}
+					/>
+					<ProtectedRoute
+						exact
+						path='/owner-dashboard'
+						component={OwnerDashboard}
+					/>
+					<ProtectedRoute
+						exact
+						path='/provider-dashboard'
+						component={ProviderDashboard}
+					/>
+					<ProtectedRoute
+						exact
+						path='/provider-dashboard/:businessId/edit'
+						component={EditBusiness}
+					/>
+					<ProtectedRoute
+					exact
+					path='/provider-dashboard/:serviceId'
+					component={EditService}
+					/>
+					<AuthRoute path='/' component={Homepage} />
+				</Switch>
+			</div>
+		);
+=======
       <div>
         <header>
           <Navbar />
@@ -51,6 +98,7 @@ class App extends Component {
         </Switch>
       </div>
     );
+>>>>>>> master
 	}
 }
 
