@@ -1,0 +1,38 @@
+.confirm-box {
+  font-family: sans-serif;
+  margin: 90px auto;
+  border-radius: 15px;
+  z-index: 2;
+
+//   -webkit-box-shadow: -1px 0px 31px 0px rgba(61, 59, 61, 1);
+//   -moz-box-shadow: -1px 0px 31px 0px rgba(61, 59, 61, 1);
+//   box-shadow: -1px 0px 31px 0px rgba(61, 59, 61, 1);
+  overflow: hidden;
+//   background-color: rgba(248, 247, 250, 0.938);
+
+  .confirm-top-box {
+    padding: 40px 60px;
+    background-color: rgba(248, 247, 250, 0.938);
+  }
+}
+
+.form-buttons {
+    display: flex;
+}
+
+.confirm-button {
+  width: 100%;
+  padding: 8px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 15px 10px;
+  color: white;
+  background-color: #11998e;
+
+  &:hover {
+    background: #38ef7d;
+  }
+}

@@ -23,7 +23,7 @@ class Service extends Component {
         <div className="YourServices-header">
           <h2 className="YourServices">Your Services</h2>
           <button
-            onClick={() => this.props.openModal("create")}
+            onClick={() => this.props.openModal("create", null)}
             className="createNewService-button"
           >
             New service
@@ -49,8 +49,13 @@ const mstp = state => ({
   services: Object.values(state.entities.services)
 });
 const mapDispatchToProps = dispatch => ({
+<<<<<<< HEAD
   openModal: modal => dispatch(openModal(modal)),
   // deleteService: serviceId => dispatch(deleteService(serviceId)),
+=======
+  openModal: (modal, id) => dispatch(openModal(modal, id)),
+  deleteService: serviceId => dispatch(deleteService(serviceId))
+>>>>>>> master
 });
 
 export default connect(mstp, mapDispatchToProps)(Service);
