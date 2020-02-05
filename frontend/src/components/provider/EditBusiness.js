@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateBusiness } from '../../actions/businessActions';
+import { updateBusiness, fetchBusiness } from '../../actions/businessActions';
 import '../session/signup.scss';
 
 const week = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 const mstp = state => ({
-	business: state.entities.business
+	business: state.entities.business,
+	providerId: state.session.user.id
 });
 const mdtp = dispath => ({
+	fetchBusiness: providerId => dispath(fetchBusiness(providerId)),
 	editBusiness: business => dispath(updateBusiness(business))
 });
 
@@ -21,6 +23,20 @@ class EditBusiness extends Component {
 			startTime: '',
 			endTime: ''
 		};
+	}
+
+	componentDidMount() {
+		this.props.fetchBusiness(this.props.providerId).then(res => {
+			let { title, location, hours, days } = this.props.business;
+			let daysSplit = days.split(' ');
+			this.setState({
+				title,
+				location,
+				days: [...daysSplit],
+				startTime: hours.slice(0, 5),
+				endTime: hours.slice(6)
+			});
+		});
 	}
 
 	update(field) {
@@ -40,7 +56,9 @@ class EditBusiness extends Component {
 			days: this.state.days.join(' '),
 			hours: `${this.state.startTime}-${this.state.endTime}`
 		};
-		this.props.editBusiness(business);
+		this.props.editBusiness(business).then(() => {
+			this.props.history.goBack();
+		});
 	};
 	handleDays = e => {
 		if (e.target.checked) {

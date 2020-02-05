@@ -4,41 +4,63 @@ import { connect } from 'react-redux';
 import Completed from './Completed';
 import Uncompleted from './Uncompleted';
 import './appointments.scss';
+import { completeAppointment } from '../../../actions/appointmentsActions';
 
 class Appointments extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			completed: true,
-			uncompleted: false
+			incompleted: false
 		};
 	}
 
 	handleComplete = e => {
 		e.preventDefault();
-		this.setState({
-			completed: !this.state.completed,
-			uncompleted: !this.state.completed
-		});
+		const { completed, incompleted } = this.state;
+		if (
+			(e.target.innerHTML === 'IN PROCESS' && completed) ||
+			(e.target.innerHTML === 'DONE' && incompleted)
+		) {
+			return;
+		} else {
+			this.setState({
+				completed: !this.state.completed,
+				incompleted: !this.state.incompleted
+			});
+		}
 	};
 	render() {
+		let doneStyle = this.state.completed ? 'active' : 'inactive';
+		let undoneStyle = this.state.incompleted ? 'active' : 'inactive';
+
 		return (
 			<div>
-				{/* <button onClick={this.handleComplete}>
-					{this.state.completed ? 'Completed' : `In Process`}
-				</button> */}
-				{/* {this.state.uncompleted ? (
+				<div className='apps-nav'>
+					<div
+						onClick={this.handleComplete}
+						className={`${doneStyle} apps-btn`}
+					>
+						IN PROCESS
+					</div>
+					<div
+						onClick={this.handleComplete}
+						className={`${undoneStyle} apps-btn`}
+					>
+						DONE
+					</div>
+				</div>
+				{this.state.incompleted ? (
 					<Completed
 						completed={this.props.completed}
 						services={this.props.services}
 					/>
 				) : (
-	
-				)} */}
-				<Uncompleted
-					incompleted={this.props.incompleted}
-					services={this.props.services}
-				/>
+					<Uncompleted
+						incompleted={this.props.incompleted}
+						services={this.props.services}
+					/>
+				)}
 			</div>
 		);
 	}
@@ -57,5 +79,10 @@ const mstp = state => {
 		services: state.entities.services
 	};
 };
+
+// const mdtp = dispatch => ({
+
+// })
+
 
 export default connect(mstp)(Appointments);
