@@ -10,7 +10,7 @@ import OwnerDashboard from './ownerDashboard/OwnerDashboard';
 import ProviderDashboard from './provider/ProviderDashboard';
 import EditBusiness from './provider/EditBusiness';
 import EditService from './provider/service/EditService';
-
+import Modal from './modal/modal'
 class App extends Component {
 	render() {
 		return (
