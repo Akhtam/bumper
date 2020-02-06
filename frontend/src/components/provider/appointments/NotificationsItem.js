@@ -19,8 +19,9 @@ const NotificationsItem = ({
 		return (
 			<div className='notification-item' key={i}>
 				<img
-			     alt="vehicle"
-				 src='https://images.vexels.com/media/users/3/154251/isolated/preview/fef0c563c39f2746c35604e969ffe3ef-bmw-car-front-view-silhouette-by-vexels.png' />
+					alt='vehicle'
+					src='https://images.vexels.com/media/users/3/154251/isolated/preview/fef0c563c39f2746c35604e969ffe3ef-bmw-car-front-view-silhouette-by-vexels.png'
+				/>
 				<div className='dates'>
 					<div className='date'>
 						{day[0]} {day[1]}
@@ -55,7 +56,7 @@ const NotificationsItem = ({
 
 	return (
 		<div>
-			<div className='notification-header'>
+			<div className='component-header'>
 				<FontAwesomeIcon icon={faBell} />
 				<div>Appointment Requests</div>
 			</div>

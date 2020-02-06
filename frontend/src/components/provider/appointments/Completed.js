@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClipboardCheck } from '@fortawesome/free-solid-svg-icons';
 
 const Completed = ({ completed, services }) => {
 	const completedAppointments = completed.map((appointment, i) => {
@@ -40,7 +42,15 @@ const Completed = ({ completed, services }) => {
 		);
 	});
 
-	return <div>{completedAppointments}</div>;
+	return (
+		<div>
+			<div className='component-header'>
+				<FontAwesomeIcon icon={faClipboardCheck} />
+				<div>Ready for Delivery: {completed.length}</div>
+			</div>
+			{completedAppointments}
+		</div>
+	);
 };
 
 export default Completed;
