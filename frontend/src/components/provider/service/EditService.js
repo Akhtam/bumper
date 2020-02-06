@@ -29,7 +29,6 @@ const mapDispatchToProps = dispatch => ({
 class EditService extends Component {
 	constructor(props) {
 		super(props);
-		// console.log(this.props);
 		this.state = {
 			type: this.props.service.type,
 			price: this.props.service.price,

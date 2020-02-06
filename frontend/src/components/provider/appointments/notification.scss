@@ -16,10 +16,11 @@
 	color: black;
 	display: flex;
 	justify-content: center;
-    padding: 8px;
+    padding: 10px;
     font-family: 'Roboto', sans-serif;
 	font-size: 20px;
-    text-transform: uppercase;
+	text-transform: uppercase;
+	border-bottom: 0.5px dashed lightgray;
     svg {
         margin-right: 5px;
     }
