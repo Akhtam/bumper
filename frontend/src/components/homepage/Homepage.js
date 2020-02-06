@@ -25,7 +25,6 @@ class Homepage extends React.Component {
             </Link>
           </div>
           <footer>
-            <p>
               <div className="about">
                 <div className="developer">
                   <span>Margaret</span>
@@ -67,7 +66,6 @@ class Homepage extends React.Component {
                   </a>
                 </div>
               </div>
-            </p>
           </footer>
         </div>
       </div>

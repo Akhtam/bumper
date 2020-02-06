@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClipboardCheck } from '@fortawesome/free-solid-svg-icons';
 
 const Completed = ({ completed, services }) => {
 	const completedAppointments = completed.map((appointment, i) => {
@@ -12,7 +14,10 @@ const Completed = ({ completed, services }) => {
 			));
 		return (
 			<div className='appointment-item' key={i}>
-				<img src='https://images.vexels.com/media/users/3/154251/isolated/preview/fef0c563c39f2746c35604e969ffe3ef-bmw-car-front-view-silhouette-by-vexels.png' />
+				<img
+					alt='vahicle'
+					src='https://images.vexels.com/media/users/3/154251/isolated/preview/fef0c563c39f2746c35604e969ffe3ef-bmw-car-front-view-silhouette-by-vexels.png'
+				/>
 				<div className='dates'>
 					<div>{appointment.startTime}</div>
 					<div>{appointment.endTime}</div>
@@ -37,7 +42,15 @@ const Completed = ({ completed, services }) => {
 		);
 	});
 
-	return <div>{completedAppointments}</div>;
+	return (
+		<div>
+			<div className='component-header'>
+				<FontAwesomeIcon icon={faClipboardCheck} />
+				<div>Ready for Delivery: {completed.length}</div>
+			</div>
+			{completedAppointments}
+		</div>
+	);
 };
 
 export default Completed;

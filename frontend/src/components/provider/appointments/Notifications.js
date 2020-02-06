@@ -4,8 +4,11 @@ import {
 	acceptAppointment,
 	removeAppointment
 } from '../../../actions/appointmentsActions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
 
 import NotificationsItem from './NotificationsItem';
+import './notification.scss'
 
 class Notifications extends Component {
 	render() {
@@ -15,16 +18,25 @@ class Notifications extends Component {
 			acceptAppointment,
 			removeAppointment
 		} = this.props;
-		
+		const notif = notifications.length < 1 ? 'notification-placeholder' : ""
 		return (
-			<div>
-				{notifications.length > 0 ?
-				<NotificationsItem
-					notifications={notifications}
-					services={services}
-					acceptAppointment={acceptAppointment}
-					removeAppointment={removeAppointment}
-				/> : null}
+			<div className={notif}>
+				{notifications.length > 0 ? (
+					<NotificationsItem
+						notifications={notifications}
+						services={services}
+						acceptAppointment={acceptAppointment}
+						removeAppointment={removeAppointment}
+					/>
+				) : (
+					<div>
+						<FontAwesomeIcon
+							size='3x'
+							icon={faBell}
+						/>
+						<h2>No Pending Appointments</h2>
+					</div>
+				)}
 			</div>
 		);
 	}

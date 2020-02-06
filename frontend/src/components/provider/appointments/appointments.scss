@@ -19,7 +19,6 @@
 		padding: 10px;
 		background-color: #447b94;
 		font-weight: 300;
-		margin: 1px;
 		color: white;
 		width: 13%;
 		text-align: center;
@@ -44,10 +43,10 @@
 	}
 	.done-button {
 		padding-top: 30px;
-		background-color: #00c6ab;
+		background-color: #2eae8e;
 		color: white;
 		width: 15%;
-		border-radius: 6px;
+		border-radius: 3px;
 		font-size: 20px;
 		text-align: center;
 		cursor: pointer;
@@ -61,7 +60,7 @@
 		padding-top: 20px;
 		color: white;
 		width: 15%;
-		cursor: pointer;
+		cursor: not-allowed;
 	}
 }
 
