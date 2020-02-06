@@ -12,6 +12,10 @@ export default class ServiceForm extends Component {
     this.types = this.props.types;
   }
 
+  componentWillMount() {
+    this.props.clearServiceErrors();
+  }
+
   handleUpdate(field) {
     return e =>
       this.setState({
@@ -21,21 +25,23 @@ export default class ServiceForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault(e);
-    this.props.processForm(this.state).then(() => this.props.closeModal());
+    // debugger
+    if (Object.values(this.props.errors).length === 0) {
+      this.props.processForm(this.state).then(this.props.closeModal);
+    }
   }
 
-  // renderErrors() {
-  //   return (
-  //     <ul>
-  //       {Object.keys(this.props.errors).map((error, i) => (
-  //         <li key={`error-${i}`}>{error}</li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
+  renderErrors() {
+    return (
+      <ul>
+        {Object.values(this.props.errors).map((error, i) => (
+          <li key={`error-${i}`}>{error}</li>
+        ))}
+      </ul>
+    );
+  }
 
   render() {
-
     return (
       <div className="ServiceForm">
         <div className="service-icon">
@@ -46,6 +52,7 @@ export default class ServiceForm extends Component {
           />
         </div>
         <h2>Create your Service</h2>
+        <div className="errors">{this.renderErrors()}</div>
         <form onSubmit={this.handleSubmit}>
           <div className="selectTyeAndPrice">
             <div>
@@ -84,7 +91,6 @@ export default class ServiceForm extends Component {
         <button className="createNewService-button" onClick={this.handleSubmit}>
           Create Service
         </button>
-        {/* {this.renderErrors()} */}
       </div>
     );
   }
