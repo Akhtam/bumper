@@ -13,7 +13,9 @@ const Uncompleted = ({ incompleted, services, completeAppointment }) => {
 			));
 		return (
 			<div className='appointment-item' key={i}>
-				<img src='https://images.vexels.com/media/users/3/154251/isolated/preview/fef0c563c39f2746c35604e969ffe3ef-bmw-car-front-view-silhouette-by-vexels.png' />
+				<img
+				 alt="vehicle"
+				 src='https://images.vexels.com/media/users/3/154251/isolated/preview/fef0c563c39f2746c35604e969ffe3ef-bmw-car-front-view-silhouette-by-vexels.png' />
 				<div className='dates'>
 					<div>{appointment.startTime}</div>
 					<div>{appointment.endTime}</div>

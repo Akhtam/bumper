@@ -8,17 +8,11 @@ import './service.scss'
 
 
 class Service extends Component {
-  constructor(props){
-    super(props)
-
-  }
-
-
   render() {
     return (
       <div>
         <div className="YourServices-header">
-          <h2 className="YourServices">Your Services</h2>
+          <div className="YourServices">Your Services</div>
           <button
             onClick={() => this.props.openModal("create", null)}
             className="createNewService-button"

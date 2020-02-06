@@ -54,6 +54,7 @@ class App extends Component {
 					/>
 					<AuthRoute path='/' component={Homepage} />
 				</Switch>
+				
 			</div>
 		);
 	}

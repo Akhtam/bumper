@@ -4,9 +4,23 @@
 .notification-placeholder {
 	color: #5f7181;
 	display: flex;
-    justify-content: center;
+	justify-content: center;
+	svg {
+		margin-top: 20%;
+		margin-left: 40%;
+	}
+}
+
+.notification-header {
+	width: 100%;
+	color: black;
+	display: flex;
+	justify-content: center;
+    padding: 8px;
+    font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+    text-transform: uppercase;
     svg {
-        margin-top: 20%;
-        margin-left: 40%;
+        margin-right: 5px;
     }
 }
