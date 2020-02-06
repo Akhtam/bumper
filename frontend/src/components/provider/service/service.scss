@@ -7,10 +7,9 @@
 	border-radius: 5px;
 	font-family: 'Roboto', sans-serif;
 
-	img {
-		margin: 10px;
-		width: 60px;
-		height: 60px;
+	.tool-logo {
+		align-self: center;
+		padding-left: 12px;
 	}
 
 	.servicePrice {
@@ -70,38 +69,45 @@
 	justify-content: space-around;
 	align-items: center;
 	margin: 0 auto;
+	padding: 8px;
+	border-bottom: 0.5px dashed lightgray;
 
-	width: 390px;
 	//   z-index: 1000;
 	//   position: fixed;
 	//   overflow: hidden;
 }
+.YourServices {
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	text-transform: uppercase;
+	padding-top: 6px;
+}
 
 .createNewService-button {
-	padding: 8px 20px 5px;
-	margin: 8px;
-	margin-right: 16px;
-	text-align: center;
-	border-radius: 10px;
+	padding: 6px;
+	margin: 0;
 	text-align: center;
 	color: white;
 	border-radius: 10px;
 	font-size: 14px;
-	background-color: #2eae8e;
+	background-color: #4cb8c4;
 	cursor: pointer;
 	border: none;
 	text-transform: uppercase;
 }
 
 .EditServiceForm {
-	margin-top: 150px;
-	width: 50%;
+	width: 45%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-left: 25%;
+	margin: 0 auto;
+	margin-top: 8%;
 	background-color: rgba(248, 247, 250, 0.938);
 	box-shadow: -1px 0px 31px 0px #3d3b3d;
+	font-family: 'Roboto', sans-serif;
+
+	border-radius: 10px;
 
 	select,
 	input {
@@ -122,17 +128,13 @@
 }
 
 .editFormButtonContainer {
-	width: 50%;
-	height: 10vw;
+	width: 100%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	margin-top: 10%;
 	margin-bottom: 10%;
 
 	button {
-		// padding: 5px;
-		padding-top: 5px;
-		padding-bottom: 2px;
 		margin: 0;
 		width: 150px;
 		height: 35px;
@@ -148,7 +150,7 @@
 	flex-direction: row;
 	justify-content: space-between;
 	width: 80%;
-	margin-top: 10%;
+	margin-top: 8%;
 }
 .inputDescriptionEdit {
 	width: 80%;

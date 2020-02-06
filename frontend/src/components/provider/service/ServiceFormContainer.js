@@ -1,9 +1,7 @@
 import { connect } from 'react-redux';
-import { createNewService, deleteService, clearServiceErrors } from '../../../actions/serviceActions';
+import { createNewService, clearServiceErrors } from '../../../actions/serviceActions';
 import ServiceForm from './ServiceForm';
 import { openModal, closeModal } from '../../../actions/modalActions';
-
-
 
 const mapStateToProps = state => ({
   service: {

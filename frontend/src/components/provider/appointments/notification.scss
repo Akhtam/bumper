@@ -1,3 +1,27 @@
 .notification-items {
-    display: flex;
+	display: flex;
+}
+.notification-placeholder {
+	color: #5f7181;
+	display: flex;
+	justify-content: center;
+	svg {
+		margin-top: 20%;
+		margin-left: 40%;
+	}
+}
+
+.component-header {
+	width: 100%;
+	color: black;
+	display: flex;
+	justify-content: center;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	text-transform: uppercase;
+	border-bottom: 0.5px dashed lightgray;
+    svg {
+        margin-right: 5px;
+    }
 }
