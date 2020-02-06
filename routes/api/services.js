@@ -26,7 +26,7 @@ router.post('/create', (req, res) => {
 			});
 			res.json(service);
 		})
-		.catch(err => res.status(404).json);
+		.catch(err => console.log(err));
 });
 
 //services index for owners search
