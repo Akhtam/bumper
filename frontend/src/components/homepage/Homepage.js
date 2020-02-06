@@ -9,7 +9,7 @@ class Homepage extends React.Component {
         {" "}
         <div className="homepage-top-presentation">
           <span>
-            <h2> Car service was never that easy </h2>
+            <h2> Car service was never this easy </h2>
             <h3> Do it right, do it with Bumper</h3>
           </span>
           {/* {this.singupForm()} */}
