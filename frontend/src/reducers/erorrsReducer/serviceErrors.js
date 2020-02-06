@@ -12,7 +12,6 @@ const ServiceErrors = (state = _nullErrors, action) => {
     case RECEIVE_SERVICE_ERRORS:
       return action.errors;
     case CLEAR_SERVICE_ERRORS: 
-    // case OPEN_MODAL:
       return _nullErrors;
     default:
       return state;

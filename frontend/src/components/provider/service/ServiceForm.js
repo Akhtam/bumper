@@ -27,7 +27,7 @@ export default class ServiceForm extends Component {
     e.preventDefault(e);
     // debugger
     if (Object.values(this.props.errors).length === 0) {
-      this.props.processForm(this.state).then(() => this.props.closeModal());
+      this.props.processForm(this.state).then(this.props.closeModal);
     }
   }
 
