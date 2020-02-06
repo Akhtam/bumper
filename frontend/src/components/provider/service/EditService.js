@@ -56,7 +56,7 @@ class EditService extends Component {
 			businessId: this.state.businessId
 		};
 		this.props.processForm(service);
-		this.props.history.push('/');
+		this.props.history.goBack();
 	};
 
 	handleDelte = serviceId => {

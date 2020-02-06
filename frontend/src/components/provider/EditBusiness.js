@@ -62,7 +62,8 @@ class EditBusiness extends Component {
 			days: this.state.days.join(' '),
 			hours: `${this.state.startTime}-${this.state.endTime}`
 		};
-    this.props.editBusiness(business);
+		this.props.editBusiness(business);
+		this.props.history.goBack();
 	};
 	handleDays = e => {
 		if (e.target.checked) {
@@ -96,8 +97,8 @@ class EditBusiness extends Component {
 					{day}
 					<input
 						type='checkbox'
-            value={day}
-            checked={this.state.days.includes(day) ? true : false}
+						value={day}
+						checked={this.state.days.includes(day) ? true : false}
 						defaultChecked={this.props.defaultChecked}
 						onChange={this.handleDays}
 					/>{' '}
