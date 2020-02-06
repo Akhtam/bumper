@@ -1,47 +1,51 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { login } from '../../actions/sessionActions';
+import { login, clearErrors } from '../../actions/sessionActions';
 import './login.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCar } from "@fortawesome/free-solid-svg-icons";
 
 class LoginForm extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			email: '',
-			password: ''
-		};
-		this.handleSubmit = this.handleSubmit.bind(this);
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: ""
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
+  componentWillMount() {
+    this.props.clearErrors();
+  }
 
-	updateInput(inputType) {
-		return e => {
-			e.preventDefault();
-			this.setState({
-				[inputType]: e.target.value
-			});
-		};
-	}
+  updateInput(inputType) {
+    return e => {
+      e.preventDefault();
+      this.setState({
+        [inputType]: e.target.value
+      });
+    };
+  }
 
-	handleSubmit(e) {
-		e.preventDefault();
-		const { loginUser } = this.props;
-		loginUser(this.state);
-	}
+  handleSubmit(e) {
+    e.preventDefault();
+    const { loginUser } = this.props;
+    loginUser(this.state);
+  }
 
+  renderErrors() {
+    return (
+      <ul>
+        {Object.values(this.props.errors).map((error, i) => (
+          <li key={`error-${i}`}>{error}</li>
+        ))}
+      </ul>
+    );
+  }
 
-	render() {
-		// const errs = this.props.errors.map((err, i) => {
-		// 	return (
-		// 		<li key={i} className='error'>
-		// 			{err}
-		// 		</li>
-		// 	);
-		// });
-		
-		return (
+  render() {
+    return (
       <div className="container">
         <div className="blur"> </div>
         <div className="login-box">
@@ -56,7 +60,7 @@ class LoginForm extends Component {
             <div className="title">
               <h2>Welcome</h2>
             </div>
-
+            <div className="errors">{this.renderErrors()}</div>
             <form onSubmit={this.handleSubmit}>
               <div className="textbox">
                 <input
@@ -92,15 +96,18 @@ class LoginForm extends Component {
         </div>
       </div>
     );
-	}
+  }
 }
 
-// const mstp = state => ({
-// 	errors: state.errors.sessionErrors
-// });
+const mstp = state => {
+  return({
+    errors: state.errors.sessionErrors
+  })
+};
 
 const mapDispatchToProps = dispatch => ({
-	loginUser: formUser => dispatch(login(formUser))
+  loginUser: formUser => dispatch(login(formUser)),
+  clearErrors: () => dispatch(clearErrors())
 });
 
-export default connect(null, mapDispatchToProps)(LoginForm);
+export default connect(mstp, mapDispatchToProps)(LoginForm);
