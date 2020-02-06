@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createNewService, deleteService } from '../../../actions/serviceActions';
+import { createNewService, deleteService, clearServiceErrors } from '../../../actions/serviceActions';
 import ServiceForm from './ServiceForm';
 import { openModal, closeModal } from '../../../actions/modalActions';
 
@@ -27,6 +27,7 @@ const mapDispatchToProps = dispatch => ({
 	processForm: formData => dispatch(createNewService(formData)),
 	openModal: (modal, id) => dispatch(openModal(modal, id)),
   closeModal: () => dispatch(closeModal()),
+  clearServiceErrors: () => dispatch(clearServiceErrors())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ServiceForm);

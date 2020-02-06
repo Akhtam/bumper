@@ -5,7 +5,7 @@ import { faCar } from '@fortawesome/free-solid-svg-icons';
 
 
 import { connect } from 'react-redux';
-import { signup } from '../../actions/sessionActions';
+import { signup, clearErrors } from '../../actions/sessionActions';
 import './login.scss'
 
 
@@ -17,56 +17,60 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		signup: user => dispatch(signup(user))
+    signup: user => dispatch(signup(user)),
+    clearErrors: () => dispatch(clearErrors())
 	};
 };
 
 class OwnerSignupForm extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			email: '',
-			name: '',
-			password: '',
-			role: 'Owner'
-		};
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      name: "",
+      password: "",
+      role: "Owner"
+    };
 
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.clearedErrors = false;
-	}
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearedErrors = false;
+  }
 
+  componentWillMount() {
+    this.props.clearErrors();
+  }
 
-	update(field) {
-		return e =>
-			this.setState({
-				[field]: e.currentTarget.value
-			});
-	}
+  update(field) {
+    return e =>
+      this.setState({
+        [field]: e.currentTarget.value
+      });
+  }
 
-	handleSubmit(e) {
-		e.preventDefault();
-		let user = {
-			email: this.state.email,
-            name: this.state.name,
-            role: this.state.role,
-			password: this.state.password
-		};
+  handleSubmit(e) {
+    e.preventDefault();
+    let user = {
+      email: this.state.email,
+      name: this.state.name,
+      role: this.state.role,
+      password: this.state.password
+    };
 
-		this.props.signup(user);
-	}
+    this.props.signup(user);
+  }
 
-	renderErrors() {
-		return (
-			<ul>
-				{Object.values(this.props.errors).map((error, i) => (
-					<li key={`error-${i}`}>{error}</li>
-				))}
-			</ul>
-		);
-	}
+  renderErrors() {
+    return (
+      <ul>
+        {Object.values(this.props.errors).map((error, i) => (
+          <li key={`error-${i}`}>{error}</li>
+        ))}
+      </ul>
+    );
+  }
 
-	render() {
-		return (
+  render() {
+    return (
       <div className="container">
         <div className="blur"> </div>
         <div className="login-box">
@@ -119,7 +123,7 @@ class OwnerSignupForm extends Component {
         </div>
       </div>
     );
-	}
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(OwnerSignupForm);

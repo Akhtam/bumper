@@ -67,7 +67,7 @@
 
 .YourServices-header {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 	margin: 0 auto;
 
@@ -79,7 +79,8 @@
 
 .createNewService-button {
 	padding: 8px 20px 5px;
-	margin: 0;
+	margin: 8px;
+	margin-right: 16px;
 	text-align: center;
 	border-radius: 10px;
 	text-align: center;

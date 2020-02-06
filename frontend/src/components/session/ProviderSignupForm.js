@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { signup } from '../../actions/sessionActions';
+import { signup, clearErrors } from '../../actions/sessionActions';
 import './signup.scss';
 
 const mapStateToProps = state => {
@@ -12,7 +12,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		signup: user => dispatch(signup(user))
+		signup: user => dispatch(signup(user)),
+		clearErrors: () => dispatch(clearErrors())
 	};
 };
 
@@ -36,6 +37,10 @@ class ProviderSignupForm extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
+  }
+
+  componentWillMount() {
+	  this.props.clearErrors();
   }
 
   update(field) {

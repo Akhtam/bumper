@@ -6,11 +6,16 @@ import {
 
 export const RECEIVE_SERVICE = "RECEIVE_SERVICE";
 export const RECEIVE_SERVICE_ERRORS = "RECEIVE_SERVICE_ERRORS";
+export const CLEAR_SERVICE_ERRORS = "CLEAR_SERVICE_ERRORS";
 export const REMOVE_SERVICE = "REMOVE_SERVICE ";
 
 export const receiveServiceErrors = errors => ({
   type: RECEIVE_SERVICE_ERRORS,
   errors
+});
+
+export const clearServiceErrors = () => ({
+  type: CLEAR_SERVICE_ERRORS
 });
 
 export const receiveService = service => ({

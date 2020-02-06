@@ -12,6 +12,10 @@ export default class ServiceForm extends Component {
     this.types = this.props.types;
   }
 
+  componentWillMount() {
+    this.props.clearServiceErrors();
+  }
+
   handleUpdate(field) {
     return e =>
       this.setState({
@@ -21,8 +25,9 @@ export default class ServiceForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault(e);
+    // debugger
     if (Object.values(this.props.errors).length === 0) {
-      this.props.processForm(this.state);
+      this.props.processForm(this.state).then(() => this.props.closeModal());
     }
   }
 

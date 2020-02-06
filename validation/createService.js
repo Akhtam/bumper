@@ -8,7 +8,7 @@ module.exports = function validateServiceInput(data) {
   data.price = validText(data.price) ? data.price : "";
   data.description = validText(data.description) ? data.description : "";
 
-  if (Validator.isEmpty(data.type)) {
+  if (Validator.equals(data.type, "SELECT")) {
     errors.type = "You must select a service type";
   } //dropdown menu with types of services
 

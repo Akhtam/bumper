@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { login } from '../../actions/sessionActions';
+import { login, clearErrors } from '../../actions/sessionActions';
 import './login.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCar } from "@fortawesome/free-solid-svg-icons";
@@ -13,6 +13,10 @@ class LoginForm extends Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.clearErrors();
   }
 
   updateInput(inputType) {
@@ -102,7 +106,8 @@ const mstp = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-	loginUser: formUser => dispatch(login(formUser))
+  loginUser: formUser => dispatch(login(formUser)),
+  clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(mstp, mapDispatchToProps)(LoginForm);
