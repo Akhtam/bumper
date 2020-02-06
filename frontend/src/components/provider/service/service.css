@@ -1,0 +1,201 @@
+.ServiceItem {
+  border: 0.5px solid lightgrey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 8px auto;
+  width: 390px;
+  height: 80px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+}
+
+.ServiceItem img {
+  margin: 10px;
+  width: 60px;
+  height: 60px;
+}
+
+.ServiceItem .servicePrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #4cb8c4;
+  margin-right: 2%;
+  min-width: 60px;
+}
+
+.ServiceItem .serviceType {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  color: #004a61;
+  font-size: 20px;
+}
+
+  
+
+
+.ServiceItem .Your-Services {
+  position: relative;
+}
+
+.YourServices-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  width: 390px;
+}
+
+.createNewService-button {
+  padding: 8px 20px 5px;
+  margin: 0;
+  text-align: center;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  font-size: 14px;
+  background-color: #2eae8e;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+}
+
+.EditServiceForm {
+  margin-top: 150px;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 25%;
+  background-color: rgba(248, 247, 250, 0.938);
+  -webkit-box-shadow: -1px 0px 31px 0px #3d3b3d;
+          box-shadow: -1px 0px 31px 0px #3d3b3d;
+}
+
+.EditServiceForm select,
+.EditServiceForm input {
+  border: 1px solid #dddddd;
+  font-size: 16px;
+  height: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  -ms-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.EditServiceForm input,
+.EditServiceForm input[placeholder] {
+  text-align: center;
+}
+
+.editFormButtonContainer {
+  width: 50%;
+  height: 10vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.editFormButtonContainer button {
+  padding-top: 5px;
+  padding-bottom: 2px;
+  margin: 0;
+  width: 150px;
+  height: 35px;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  font-size: 15px;
+  border: none;
+  text-transform: uppercase;
+}
+
+.PriceAndType {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  margin-top: 10%;
+}
+
+.inputDescriptionEdit {
+  width: 80%;
+  margin-top: 3%;
+}
+
+.deleteServiceButton {
+  background: #e35d5b;
+  cursor: pointer;
+}
+
+.deleteServiceButton:hover {
+  border: 2px solid #e35d5b;
+}
+
+.editServiceButton {
+  background: #0064B3;
+  cursor: pointer;
+}
+
+.editServiceButton:hover {
+  border: 2px solid #0064B3;
+}
+
+.editService img {
+  height: 25px;
+  width: 25px;
+  
+}
+/*# sourceMappingURL=service.css.map */
