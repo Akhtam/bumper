@@ -8,7 +8,7 @@ Car owners, on the other hand, are able to quickly book the car service they nee
 At a later stage Bumper plans to integrate the Smartcar API to work with real-time car data.
 With live data, a car owner can manage their car efficiently. They will be informed about upcoming oil changes or other general car services.
 
-[take a look](http://bumper-ly.herokuapp.com/#/)
+[Take a look](http://bumper-ly.herokuapp.com/#/)
 ***
 
 ## **Features**
