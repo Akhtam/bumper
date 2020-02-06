@@ -5,69 +5,72 @@ import { faCar } from '@fortawesome/free-solid-svg-icons';
 
 
 import { connect } from 'react-redux';
-import { signup } from '../../actions/sessionActions';
+import { signup, clearErrors } from '../../actions/sessionActions';
 import './login.scss'
 
 
 const mapStateToProps = state => {
 	return {
-		errors: state.errors.session
+		errors: state.errors.sessionErrors
 	};
 };
 
 const mapDispatchToProps = dispatch => {
 	return {
-		signup: user => dispatch(signup(user))
+    signup: user => dispatch(signup(user)),
+    clearErrors: () => dispatch(clearErrors())
 	};
 };
 
 class OwnerSignupForm extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			email: '',
-			name: '',
-			password: '',
-			role: 'Owner',
-			errors: {}
-		};
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      name: "",
+      password: "",
+      role: "Owner"
+    };
 
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.clearedErrors = false;
-	}
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearedErrors = false;
+  }
 
+  componentWillMount() {
+    this.props.clearErrors();
+  }
 
-	update(field) {
-		return e =>
-			this.setState({
-				[field]: e.currentTarget.value
-			});
-	}
+  update(field) {
+    return e =>
+      this.setState({
+        [field]: e.currentTarget.value
+      });
+  }
 
-	handleSubmit(e) {
-		e.preventDefault();
-		let user = {
-			email: this.state.email,
-            name: this.state.name,
-            role: this.state.role,
-			password: this.state.password
-		};
+  handleSubmit(e) {
+    e.preventDefault();
+    let user = {
+      email: this.state.email,
+      name: this.state.name,
+      role: this.state.role,
+      password: this.state.password
+    };
 
-		this.props.signup(user);
-	}
+    this.props.signup(user);
+  }
 
-	renderErrors() {
-		return (
-			<ul>
-				{Object.keys(this.state.errors).map((error, i) => (
-					<li key={`error-${i}`}>{this.state.errors[error]}</li>
-				))}
-			</ul>
-		);
-	}
+  renderErrors() {
+    return (
+      <ul>
+        {Object.values(this.props.errors).map((error, i) => (
+          <li key={`error-${i}`}>{error}</li>
+        ))}
+      </ul>
+    );
+  }
 
-	render() {
-		return (
+  render() {
+    return (
       <div className="container">
         <div className="blur"> </div>
         <div className="login-box">
@@ -83,6 +86,7 @@ class OwnerSignupForm extends Component {
               <div className="title">
                 <h4>Service Driven</h4>
               </div>
+              <div className="errors">{this.renderErrors()}</div>
               <div className="textbox">
                 <input
                   type="text"
@@ -114,13 +118,12 @@ class OwnerSignupForm extends Component {
                   className="form-button button"
                 />
               </div>
-              {this.renderErrors()}
             </form>
           </div>
         </div>
       </div>
     );
-	}
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(OwnerSignupForm);

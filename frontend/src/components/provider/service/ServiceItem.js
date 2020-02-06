@@ -12,7 +12,7 @@ export const ServiceItem = props => {
 				<div className='tool-logo'>
 					<FontAwesomeIcon icon={faTools} size='2x'/>
 				</div>
-				<div className='servicePrice'>{props.service.price}</div>
+				<div className='servicePrice'>${props.service.price}</div>
 				<div className='serviceType'>
 					{props.service.type}{' '}
 					{props.service._id === '5e38ab65d4019e02c0894202' ? (

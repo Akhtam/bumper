@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateService, deleteService } from '../../../actions/serviceActions';
+import { fetchBusiness } from '../../../actions/businessActions';
 import { openModal, closeModal } from '../../../actions/modalActions';
 import './service.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWrench } from '@fortawesome/free-solid-svg-icons';
 
 const mapStateToProps = (state, ownProps) => ({
+	providerId: state.session.user.id,
 	service: state.entities.services[ownProps.match.params.serviceId],
 	types: [
 		'Oil change',
@@ -15,11 +17,10 @@ const mapStateToProps = (state, ownProps) => ({
 		'Maintance inspections',
 		'Check Engine Light Diagnostic'
 	]
-
-	// errors: state.errors.serviceErrors
 });
 
 const mapDispatchToProps = dispatch => ({
+	fetchBusiness: providerId => dispatch(fetchBusiness(providerId)),
 	processForm: formData => dispatch(updateService(formData)),
 	openModal: modal => dispatch(openModal(modal)),
 	closeModal: () => dispatch(closeModal()),
@@ -30,11 +31,21 @@ class EditService extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			type: this.props.service.type,
-			price: this.props.service.price,
-			description: this.props.service.description,
-			businessId: this.props.businessId
+			type: '',
+			price: '',
+			description: ''
 		};
+	}
+
+	componentDidMount() {
+		this.props.fetchBusiness(this.props.providerId).then(() => {
+			let { type, price, description } = this.props.service;
+			this.setState({
+				type,
+				price,
+				description
+			});
+		});
 	}
 
 	update(field) {
@@ -51,8 +62,7 @@ class EditService extends Component {
 			id: this.props.service._id,
 			type: this.state.type,
 			price: this.state.price,
-			description: this.state.description,
-			businessId: this.state.businessId
+			description: this.state.description
 		};
 		this.props.processForm(service);
 		this.props.history.goBack();
