@@ -47,7 +47,8 @@ With that live data car owner can manage their car's efficient. They will be inf
 
  ### Frotend
  * React
-
+ * Redux
+ * SCSS
  ### Workflow and project management
  * Bumper is a group project. To esnure a effective, structured and smooth team work we used a agile project management approach with git workflow, kanban and daily standup meetings.
 
