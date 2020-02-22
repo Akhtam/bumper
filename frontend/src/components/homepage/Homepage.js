@@ -27,7 +27,7 @@ class Homepage extends React.Component {
           <footer>
               <div className="about">
                 <div className="developer">
-                  <span>Margaret</span>
+                  <span>Margaret Cavenagh</span>
                   <a
                     id="linkedIn"
                     href="https://www.linkedin.com/in/margaret-cavenagh-93589846/"
@@ -41,7 +41,7 @@ class Homepage extends React.Component {
                 </div>
 
                 <div className="developer">
-                  <span>Akhtam</span>
+                  <span>Akhtam Ismatov</span>
                   <a
                     id="linkedIn"
                     href="https://www.linkedin.com/in/akhtam-ismatov/"
@@ -54,7 +54,7 @@ class Homepage extends React.Component {
                   </a>
                 </div>
                 <div className="developer">
-                  <span>Jan</span>
+                  <span>Jan-Philipp Viefhues</span>
                   <a
                     href="https://www.linkedin.com/in/jan-philipp-viefhues-b68885140/"
                     target="_blank"
