@@ -17,7 +17,7 @@ class Service extends Component {
             onClick={() => this.props.openModal("create", null)}
             className="createNewService-button"
           >
-            New service
+           Add New Service
           </button>
         </div>
 
