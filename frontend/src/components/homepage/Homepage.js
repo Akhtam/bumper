@@ -9,7 +9,7 @@ class Homepage extends React.Component {
         {" "}
         <div className="homepage-top-presentation">
           <span>
-            <h2> Car service was never that easy </h2>
+            <h2> Car service was never this easy </h2>
             <h3> Do it right, do it with Bumper</h3>
           </span>
           {/* {this.singupForm()} */}
@@ -25,10 +25,9 @@ class Homepage extends React.Component {
             </Link>
           </div>
           <footer>
-            <p>
               <div className="about">
                 <div className="developer">
-                  <span>Margaret</span>
+                  <span>Margaret Cavenagh</span>
                   <a
                     id="linkedIn"
                     href="https://www.linkedin.com/in/margaret-cavenagh-93589846/"
@@ -42,7 +41,7 @@ class Homepage extends React.Component {
                 </div>
 
                 <div className="developer">
-                  <span>Akhtam</span>
+                  <span>Akhtam Ismatov</span>
                   <a
                     id="linkedIn"
                     href="https://www.linkedin.com/in/akhtam-ismatov/"
@@ -55,7 +54,7 @@ class Homepage extends React.Component {
                   </a>
                 </div>
                 <div className="developer">
-                  <span>Jan</span>
+                  <span>Jan-Philipp Viefhues</span>
                   <a
                     href="https://www.linkedin.com/in/jan-philipp-viefhues-b68885140/"
                     target="_blank"
@@ -67,7 +66,6 @@ class Homepage extends React.Component {
                   </a>
                 </div>
               </div>
-            </p>
           </footer>
         </div>
       </div>

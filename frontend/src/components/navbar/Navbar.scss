@@ -1,139 +1,134 @@
 .navbar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0% 2%;
-  max-height: 50px;
-background-color: rgba(255, 255, 255, 0.972);  
-  border-bottom: 2px solid rgba(0, 0, 0, 0.6);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 10;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0% 2%;
+	max-height: 50px;
+	background-color: rgba(255, 255, 255, 0.972);
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 10;
 
-  h1 {
-    color: rgba(0, 0, 0, 0.6);
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    font-size: 25px;
-    margin-right: 110px;
-    margin-top: -18px;
-  }
+	h1 {
+		color: rgba(0, 0, 0, 0.6);
+		font-family: 'Roboto', sans-serif;
+		font-size: 25px;
+		margin-right: 110px;
+		margin-top: -18px;
+	}
 
-  .username {
-    text-decoration: none;
-    margin-top: 30px;
-  }
+	.username {
+		text-decoration: none;
+		margin-top: 30px;
+	}
 
-  .bumper-logosign {
-    text-decoration: none;
-    margin-top: 30px;
-  }
+	.bumper-logosign {
+		text-decoration: none;
+		margin-top: 30px;
+	}
 }
 
 .login-buttons {
-  display: flex;
-  margin-right: 60px;
-
+	display: flex;
+	margin-right: 60px;
 }
 
-
 .login-button {
-  padding: 8px 10px;
-  margin-left: 14px;
-  border-radius: 7px;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  cursor: pointer;
-  text-decoration: none;
-  font-family: "Roboto", sans-serif;
-  margin-bottom: 32px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // width: 110px;
-  background-color: #11998e;
-  .loginLink{
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    width: 90px;
-    text-align: center;
-  }
+	padding: 8px 10px;
+	margin-left: 14px;
+	border-radius: 7px;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	cursor: pointer;
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+	margin-bottom: 32px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// width: 110px;
+	background-color: #11998e;
+	.loginLink {
+		text-decoration: none;
+		color: white;
+		font-size: 16px;
+		width: 90px;
+		text-align: center;
+	}
 }
 
 .login-button:hover {
-  background-color: #38ef7d;
+	background-color: #38ef7d;
 }
 
-
-
 .dropdown {
-  display: inline-block;
+	display: inline-block;
 }
 
 .dropbtn {
-  color: #8e8e8e;
-  font-size: 56px;
-  border: none;
-  cursor: pointer;
-  margin-right: 43px;
-  font-weight: 400;
-  position: absolute;
-  right: 12px;
-  top: -26px;
-  padding-bottom: 9px;
+	color: #8e8e8e;
+	font-size: 56px;
+	border: none;
+	cursor: pointer;
+	margin-right: 43px;
+	font-weight: 400;
+	position: absolute;
+	right: 12px;
+	top: -26px;
+	padding-bottom: 9px;
 }
 
 .dropbtn:hover,
 .dropbtn:focus {
-  background-color: rgb(237, 237, 237);
+	background-color: rgb(237, 237, 237);
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  top: 32px;
-  right: 54px;
-  background-color: #fff;
-  border-radius: 3px;
-  z-index: 25;
-  text-align: left;
-  box-shadow: -1px 4px 6px 1px rgba(0, 0, 0, 0.09);
-  padding: 0px;
-  border-bottom: 1px solid lightgray;
-  border-left: 1px solid lightgray;
+	display: none;
+	position: absolute;
+	top: 32px;
+	right: 54px;
+	background-color: #fff;
+	border-radius: 3px;
+	z-index: 25;
+	text-align: left;
+	box-shadow: -1px 4px 6px 1px rgba(0, 0, 0, 0.09);
+	padding: 0px;
+	border-bottom: 1px solid lightgray;
+	border-left: 1px solid lightgray;
 }
 
 .dropdown-content li {
-  color: black;
-  text-decoration: none;
-  display: block;
-  font-weight: 700;
-  padding: 12px 16px 12px 32px;
+	color: black;
+	text-decoration: none;
+	display: block;
+	font-weight: 700;
+	padding: 12px 16px 12px 32px;
 }
 
 .dropdown-content li:hover {
-  background-color: lightgray;
-  cursor: pointer;
+	background-color: lightgray;
+	cursor: pointer;
 }
 
 .dropdown-content li button {
-  border: none;
-  font-size: 22px;
-  color: dimgray;
-  font-weight: bold;
-  padding: 0px 16px;
-  background-color: transparent;
-  margin: auto;
+	border: none;
+	font-size: 22px;
+	color: dimgray;
+	font-weight: bold;
+	padding: 0px 16px;
+	background-color: transparent;
+	margin: auto;
 }
 
 .dropdown-content li button:hover {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .show {
-  display: block;
+	display: block;
 }

@@ -4,42 +4,64 @@ import { connect } from 'react-redux';
 import Completed from './Completed';
 import Uncompleted from './Uncompleted';
 import './appointments.scss';
+import { completeAppointment } from '../../../actions/appointmentsActions';
 
 class Appointments extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			completed: true,
-			uncompleted: false
+			incompleted: false
 		};
 	}
 
 	handleComplete = e => {
 		e.preventDefault();
-		this.setState({
-			completed: !this.state.completed,
-			uncompleted: !this.state.completed
-		});
+		const { completed, incompleted } = this.state;
+		if (
+			(e.target.innerHTML === 'IN PROCESS' && completed) ||
+			(e.target.innerHTML === 'DONE' && incompleted)
+		) {
+			return;
+		} else {
+			this.setState({
+				completed: !this.state.completed,
+				incompleted: !this.state.incompleted
+			});
+		}
 	};
 	render() {
-		if (this.props.completed.length === 0 && this.props.incompleted.length === 0 ) return null;
+		let doneStyle = this.state.completed ? 'active' : 'inactive';
+		let undoneStyle = this.state.incompleted ? 'active' : 'inactive';
+		
 		return (
 			<div>
-				{/* <button onClick={this.handleComplete}>
-					{this.state.completed ? 'Completed' : `In Process`}
-				</button> */}
-				{/* {this.state.uncompleted ? (
+				<div className='apps-nav'>
+					<div
+						onClick={this.handleComplete}
+						className={`${doneStyle} apps-btn`}
+					>
+						IN PROCESS
+					</div>
+					<div
+						onClick={this.handleComplete}
+						className={`${undoneStyle} apps-btn`}
+					>
+						DONE
+					</div>
+				</div>
+				{this.state.incompleted ? (
 					<Completed
 						completed={this.props.completed}
 						services={this.props.services}
 					/>
 				) : (
-	
-				)} */}
-				<Uncompleted
-					incompleted={this.props.incompleted}
-					services={this.props.services}
-				/>
+					<Uncompleted
+						incompleted={this.props.incompleted}
+						services={this.props.services}
+						completeAppointment={this.props.completeAppointment}
+					/>
+				)}
 			</div>
 		);
 	}
@@ -59,4 +81,9 @@ const mstp = state => {
 	};
 };
 
-export default connect(mstp)(Appointments);
+const mdtp = dispatch => ({
+	completeAppointment: appointment => dispatch(completeAppointment(appointment))
+})
+
+
+export default connect(mstp, mdtp)(Appointments);

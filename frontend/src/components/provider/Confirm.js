@@ -7,10 +7,6 @@ import { withRouter } from "react-router-dom";
 import "./confirm.scss";
 
 class Confirm extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="confirm-box">

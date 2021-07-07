@@ -1,0 +1,21 @@
+.owner-dash {
+  border: 0.5px dashed darkslategray;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  align-self: center;
+  text-align: center;
+  margin: 10% auto;
+  padding: 20px;
+  background-color: rgb(187, 187, 187);
+  color: darkslategray;
+  font-weight: 500;
+  font-size: large;
+}
+
+.tool-icon {
+  align-self: center;
+  font-size: larger;
+}

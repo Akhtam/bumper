@@ -26,7 +26,7 @@ router.post('/create', (req, res) => {
 			});
 			res.json(service);
 		})
-		.catch(err => res.status(404).json);
+		.catch(err => console.log(err));
 });
 
 //services index for owners search
@@ -62,7 +62,6 @@ router.delete('/delete/:id', (req, res) => {
 		Business.findById(businessId).then(business => {
 			business.serviceIds.remove(serviceId);
 			business.save();
-			console.log(serviceId)
 			Service.deleteOne({ _id: serviceId }).then(() =>
 				res.json(business)
 			);

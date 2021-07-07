@@ -8,8 +8,7 @@ import './provider.scss';
 
 class ProviderDashboard extends Component {
 	componentDidMount() {
-		console.log(this.props)
-		this.props.fetchBusiness(this.props.providerId)
+		this.props.fetchBusiness(this.props.providerId);
 	}
 
 	handleEdit = e => {
@@ -19,7 +18,7 @@ class ProviderDashboard extends Component {
 		);
 	};
 	render() {
-		// if(!this.props.businessId) return null;
+		if (!this.props.businessId) return null;
 		return (
 			<div className='provider-container'>
 				<div className='appointments-container'>

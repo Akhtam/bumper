@@ -1,9 +1,7 @@
 import { connect } from 'react-redux';
-import { createNewService, deleteService } from '../../../actions/serviceActions';
+import { createNewService, clearServiceErrors } from '../../../actions/serviceActions';
 import ServiceForm from './ServiceForm';
 import { openModal, closeModal } from '../../../actions/modalActions';
-
-
 
 const mapStateToProps = state => ({
   service: {
@@ -19,16 +17,15 @@ const mapStateToProps = state => ({
     "Fluid services",
     "Maintance inspections",
     "Check Engine Light Diagnostic"
-  ]
-
-
-  // errors: state.errors.serviceErrors
+  ],
+  errors: state.errors.serviceErrors
 });
 
 const mapDispatchToProps = dispatch => ({
 	processForm: formData => dispatch(createNewService(formData)),
 	openModal: (modal, id) => dispatch(openModal(modal, id)),
   closeModal: () => dispatch(closeModal()),
+  clearServiceErrors: () => dispatch(clearServiceErrors())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ServiceForm);
